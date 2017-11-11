@@ -2,6 +2,8 @@ package simulation;
 
 import java.util.List;
 
+import simulation.buses.Bus;
+
 /**
  * Represents a general bus route. A bus route is made of of a series of route
  * elements.

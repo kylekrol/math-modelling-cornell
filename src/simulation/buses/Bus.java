@@ -1,4 +1,4 @@
-package simulation;
+package simulation.buses;
 
 public class Bus {
 

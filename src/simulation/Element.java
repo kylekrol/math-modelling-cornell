@@ -1,5 +1,7 @@
 package simulation;
 
+import simulation.buses.Bus;
+
 public interface Element {
 
 	/**

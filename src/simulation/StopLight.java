@@ -2,14 +2,19 @@ package simulation;
 
 import java.util.Random;
 
-public class StopLight implements Element {
+import simulation.buses.Bus;
+
+public class StopLight extends WaitElement {
 	
+	/** Random number generator object for this class */
 	private static final Random rand = new Random();
 	
-	
+	/** Speed the bus travels through the stop light */
+	private double throughSpeed;
 
-	StopLight() {
-		
+	StopLight(double congestion, double throughSpeed) {
+		super(congestion);
+		this.throughSpeed = throughSpeed;
 	}
 	
 	@Override

@@ -1,5 +1,7 @@
 package simulation;
 
+import simulation.buses.Bus;
+
 /**
  * Represents a road element in a bus route. A road element is a
  * section of road that a bus drives along at constant speed with no chance of
