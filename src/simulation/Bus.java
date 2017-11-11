@@ -1,8 +1,5 @@
 package simulation;
 
-/**
- * 
- */
 public class Bus {
 
 	/** Gas used in gallons */
@@ -22,10 +19,12 @@ public class Bus {
 	}
 	
 	/**
+	 * Calculates the fuel consumed for the given energy consumed.
 	 * 
 	 * @param e
+	 * 		the energy consumed by the engine
 	 */
-	private void energyConsumed(double e) {
+	private void combustionEnergy(double e) {
 		// TODO
 	}
 	
@@ -34,10 +33,6 @@ public class Bus {
 	}
 	
 	public void travel(double length, double grade) {
-		// TODO
-	}
-	
-	public void potential(double length, double grade) {
 		// TODO
 	}
 	
