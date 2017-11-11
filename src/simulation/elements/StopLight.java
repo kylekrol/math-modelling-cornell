@@ -12,22 +12,22 @@ import simulation.buses.Bus;
  */
 public class StopLight extends WaitElement {
 
-	/** Speed the bus travels through the stop light */
-	private double throughSpeed;
+	/** Whether or not the bus is turning at this light */
+	private boolean turn;
 
 	/**
-	 * Creates a new stop light with the specified wait time and through
-	 * speed.
+	 * Creates a new stop light with the specified wait time and the turning
+	 * flag value.
 	 */
-	public StopLight(double wait, double throughSpeed) {
+	public StopLight(double wait, boolean turn) {
 		super(wait);
-		this.throughSpeed = throughSpeed;
+		this.turn = turn;
 	}
 
 	@Override
 	public void drive(Bus bus) {
 		if(WaitElement.rand.nextDouble() < Constants.LIGHT_THROUGH_CHANCE) {
-			bus.brake(throughSpeed);
+			if(turn) bus.brake(Constants.TURN_SPEED);
 		} else {
 			bus.brake(0.0d);
 			bus.idle(wait);
