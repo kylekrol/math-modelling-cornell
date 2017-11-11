@@ -1,13 +1,63 @@
 // Route 11 daytime elements
-rd 20 180 0 // seneca to albany
-sl 0.5 false
+rd 20 180 0
+sl 0.5 false @seneca_cayuga
 rd 20 140 0
-sl 0.5 false
+sl 0.5 false @seneca_geneva
 rd 20 83 0
-sl 0.5 true
-rd 20 48 0 // albany to state
-bs 0.5 // @salv army
+sl 0.5 true @seneca_albany
+rd 20 48 0
+bs 0.5 @salv army
 rd 20 47
-sl 0.5 false
-rd 20 100 // albany to green
-sl 0.5 true
+sl 0.5 false @albany_state
+rd 20 100
+sl 0.5 true @albany_green
+rd 20 80 0
+sl 0.5 false @green_geneva
+rd 20 140 0
+sl 0.5 false @green_cayuga
+rd 20 110 0
+bs 0.5 @commons
+rd 20 350 0
+sl 0.5 true @green_state
+rd 20 91 0
+sl 0.5 true @state_aurora
+bs 0.5 @commons
+rd 20 160 0
+cw 0.5 @aurora_hudson
+rd 20 400 38
+bs 0.5 @husdon_columbia
+ss 0.5 @hudson_columbia
+rd 20 110 11
+cw 0.5
+rd 20 130 0
+bs 0.5 @S hill elementary
+cw 0.5
+rd 20 300 23
+bs 0.5 @hudson_grandview
+ss 0.5 @hudson_grandview
+rd 20 250 0
+bs 0.5 @hudson_cottington
+cw 0.5 @hudson_cottington
+rd 20 300 0
+bs 0.5 @hudson_bikepath
+rd 20 100 0
+ss 0.5 @grant_coddington
+rd 20 200 0
+cw 0.5 @parklotz
+rd 20 120 0
+cw 0.5 @ic
+ss 0.5 @grant_gym
+bs 0.5 @icaparts
+rd 20 190 0
+cw 0.5 @ic
+rd 20 60 0
+cw 0.5
+bs 0.5 @icparkings
+cw 0.5
+cs 0.5
+rd 20 55 0
+ss 0.5 @lotz_textor
+rd 20 86 0
+ss 0.5 @textor_grant
+rd 20 110 0
+bs 0.5 @mullerChapel
