@@ -11,7 +11,7 @@ public class Route {
 	/** List of route elements */
 	private List<Element> elements;
 	
-	/**  */
+	/** Creates a new route out of the given elements */
 	Route(List<Element> elements) {
 		this.elements = elements;
 	}
@@ -29,6 +29,12 @@ public class Route {
 			drive(bus);
 	}
 	
+	/**
+	 * Drives the bus through a route a single time.
+	 * 
+	 * @param bus
+	 * 		the bus driving through the route
+	 */
 	public void drive(Bus bus) {
 		for(Element element:elements)
 			element.drive(bus);
