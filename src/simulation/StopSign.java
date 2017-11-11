@@ -9,7 +9,7 @@ import simulation.buses.Bus;
  */
 public class StopSign extends WaitElement {
 
-	/** Creates a new stop sign with the specified congestion */
+	/** Creates a new stop sign with the specified congestion factor */
 	StopSign(double congestion) {
 		super(congestion);
 	}

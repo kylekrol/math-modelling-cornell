@@ -9,7 +9,7 @@ import simulation.buses.Bus;
  */
 public class BusStop extends WaitElement {
 
-	/** Creates a new bus stop with the specified congestion */
+	/** Creates a new bus stop with the specified congestion factor */
 	BusStop(double congestion) {
 		super(congestion);
 	}

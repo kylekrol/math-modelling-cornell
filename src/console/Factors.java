@@ -17,4 +17,20 @@ public class Factors {
 	public static double MAX_RECHARGE() {
 		return MAX_RECHARGE;
 	}
+	
+	private static double BUS_STOP_WAIT = 10.0d;
+	private static double STOP_LIGHT_WAIT = 120.0d;
+	private static double STOP_SIGN_WAIT = 30.0d;
+
+	public static double BUS_STOP_WAIT() {
+		return BUS_STOP_WAIT;
+	}
+
+	public static double STOP_LIGHT_WAIT() {
+		return STOP_LIGHT_WAIT;
+	}
+
+	public static double STOP_SIGN_WAIT() {
+		return STOP_SIGN_WAIT;
+	}	
 }
