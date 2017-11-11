@@ -97,7 +97,12 @@ public class RouteFactory {
 			System.err.println("Imporperly formatted BusStop on line " + i);
 			System.exit(-1);
 		}
-		return new StopSign(congestion);
+		return new StopSign(stopSignWait(congestion));
+	}
+	
+	private static double stopSignWait(double congestion) {
+		// TODO
+		return congestion;
 	}
 	
 	// ====================================================
