@@ -15,15 +15,17 @@ public class Bus {
 		this.v = 0;
 	}
 
-	/** Returns the bus's current speed in meters per second */
-	public double speed() {
-		return v;
+	/** Returns the bus's current gas usage in gallons */
+	public double gasUsage() {
+		return gasUsage;
 	}
 
 	/** Updates gas usage given an amount of energy e consumed in joules */
 	private void combustionEnergy(double e) {
-		assert e > 0;
-		gasUsage += Constants.GAS_PER_JOULE * e / Constants.BUSS_EFF;
+		if(e >= 0)
+			gasUsage += Constants.GAS_PER_JOULE * e / Constants.BUSS_EFF;
+		else
+			System.err.println("Negative energy request revieved");
 	}
 
 	/**
