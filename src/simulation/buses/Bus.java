@@ -20,15 +20,10 @@ public class Bus {
 		return v;
 	}
 
-	/**
-	 * Calculates the fuel consumed for the given energy consumed.
-	 * 
-	 * @param e
-	 *            the energy consumed by the engine
-	 */
+	/** Updates gas usage given an amount of energy e consumed in joules */
 	private void combustionEnergy(double e) {
 		assert e > 0;
-		// TODO
+		gasUsage += Constants.GAS_PER_JOULE * e / Constants.ENGINE_EFFICIENCY;
 	}
 
 	/**
