@@ -8,6 +8,8 @@ public class Constants {
 	public static final double BUSS_MASS = 13607.771d;
 	public static final double BUSS_EFF = 0.1d;
 	public static final double TURN_SPEED = 10.0d * MPH_TO_METERS_PER_S;
+	public static final double ROLL_FRIC = 0.092d;
+	public static final double DRAG_CONST = 0.00021d;
 
 	public static final double MAX_CHARGE = 1.0d;
 	public static final double MIN_CHARGE = 0.1d;

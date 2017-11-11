@@ -44,7 +44,9 @@ public class Bus {
 	}
 
 	public void travel(double length, double elevation) {
-		
+		double t = Constants.BUSS_MASS * length * (Constants.ROLL_FRIC + Constants.DRAG_CONST * v*v);
+		double u = Constants.BUSS_MASS * 9.81d * elevation;
+		combustionEnergy(t + u);
 	}
 
 	public void brake(double vf) {
