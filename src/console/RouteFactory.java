@@ -27,16 +27,16 @@ public class RouteFactory {
 			while((line = reader.readLine().toLowerCase()) != null) {
 				i++;
 				if(line.startsWith("road"))
-					elements.add(loadRoad(line, i));
+					elements.add(loadRoad(line.split(" "), i));
 				else if(line.startsWith("busstop"))
-					elements.add(loadBusStop(line, i));
+					elements.add(loadBusStop(line.split(" "), i));
 				else if(line.startsWith("stopsign"))
-					elements.add(loadStopSign(line, i));
+					elements.add(loadStopSign(line.split(" "), i));
 				else if(line.startsWith("stoplight"))
-					elements.add(loadStopLight(line, i));
+					elements.add(loadStopLight(line.split(" "), i));
 				else if(line.startsWith("crosswalk"))
-					elements.add(loadCrosswalk(line, i));
-				else
+					elements.add(loadCrosswalk(line.split(" "), i));
+				else if(!line.startsWith("//"))
 					System.err.println("Unexpected route element type on line " + i);
 			}
 		} finally {
@@ -45,27 +45,36 @@ public class RouteFactory {
 		return new Route(elements);
 	}
 	
-	private static Road loadRoad(String line, int i) {
+	private static Road loadRoad(String[] line, int i) {
+		double speed = 0.0d, length = 0.0d, elevation = 0.0d;
+		try {
+			if(line.length < 3) throw new NumberFormatException();
+			speed = Double.parseDouble(line[1]) * 0.44704d;
+			length = Double.parseDouble(line[2]);
+			elevation  = Double.parseDouble(line[3]);
+		} catch(NumberFormatException e) {
+			System.err.println("Imporperly formatted Road on line " + i);
+			System.exit(-1);
+		}
+		return new Road(speed, length, elevation);
+	}
+	
+	private static BusStop loadBusStop(String[] line, int i) {
 		// TODO
 		return null;
 	}
 	
-	private static BusStop loadBusStop(String line, int i) {
+	private static StopSign loadStopSign(String[] line, int i) {
 		// TODO
 		return null;
 	}
 	
-	private static StopSign loadStopSign(String line, int i) {
+	private static StopLight loadStopLight(String[] line, int i) {
 		// TODO
 		return null;
 	}
 	
-	private static StopLight loadStopLight(String line, int i) {
-		// TODO
-		return null;
-	}
-	
-	private static Crosswalk loadCrosswalk(String line, int i) {
+	private static Crosswalk loadCrosswalk(String[] line, int i) {
 		// TODO
 		return null;
 	}

@@ -41,8 +41,8 @@ public class Bus {
 		v = vf;
 	}
 
-	public void travel(double length, double grade) {
-		// TODO
+	public void travel(double length, double elevation) {
+		
 	}
 
 	public void brake(double vf) {
