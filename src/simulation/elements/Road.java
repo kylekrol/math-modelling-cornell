@@ -1,5 +1,6 @@
-package simulation;
+package simulation.elements;
 
+import simulation.Element;
 import simulation.buses.Bus;
 
 /**
@@ -17,7 +18,7 @@ public class Road implements Element {
 	private double grade;
 	
 	/** Set the parameters in a new Road object */
-	Road(double speed, double length, double grade) {
+	public Road(double speed, double length, double grade) {
 		this.length = length;
 		this.speed = speed;
 		this.grade = grade;

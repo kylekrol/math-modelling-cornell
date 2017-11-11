@@ -14,7 +14,7 @@ public class Route {
 	private List<Element> elements;
 	
 	/** Creates a new route out of the given elements */
-	Route(List<Element> elements) {
+	public Route(List<Element> elements) {
 		this.elements = elements;
 	}
 	

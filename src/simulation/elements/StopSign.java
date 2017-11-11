@@ -1,5 +1,7 @@
-package simulation;
+package simulation.elements;
 
+import console.Constants;
+import simulation.WaitElement;
 import simulation.buses.Bus;
 
 /**
@@ -9,14 +11,14 @@ import simulation.buses.Bus;
  */
 public class StopSign extends WaitElement {
 
-	/** Creates a new stop sign with the specified congestion factor */
-	StopSign(double congestion) {
-		super(congestion);
+	/** Creates a new stop sign with the specified wait time */
+	public StopSign(double wait) {
+		super(wait);
 	}
 
 	@Override
 	public void drive(Bus bus) {
 		bus.brake(0.0d);
-		//bus.idle(); // TODO
+		bus.idle(super.wait);
 	}
 }
