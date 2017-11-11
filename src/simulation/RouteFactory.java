@@ -11,6 +11,4 @@ public class RouteFactory {
 		// TODO
 		return null;
 	}
-	
-	
 }

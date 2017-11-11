@@ -38,6 +38,7 @@ public class Road implements Element {
 
 	@Override
 	public void drive(Bus bus) {
-		
+		bus.accelerate(speed, grade);
+		bus.travel(length, grade);
 	}
 }
