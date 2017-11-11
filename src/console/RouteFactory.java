@@ -17,6 +17,17 @@ import simulation.elements.StopSign;
 
 public class RouteFactory {
 
+	/**
+	 * Loads a route from a route file at the specified directory.
+	 * 
+	 * @param file
+	 * 		the route file's directory
+	 * @return
+	 * 		the route object
+	 * @throws FileNotFoundException
+	 * 		thrown if the file isn't found
+	 * @throws IOException
+	 */
 	public static Route loadRoute(String file) throws FileNotFoundException, IOException {
 		BufferedReader reader = null;
 		List<Element> elements = new LinkedList<Element>();

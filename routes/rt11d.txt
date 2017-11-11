@@ -1,0 +1,13 @@
+// Route 11 daytime elements
+rd 20 180 0 // seneca to albany
+sl 0.5 false
+rd 20 140 0
+sl 0.5 false
+rd 20 83 0
+sl 0.5 true
+rd 20 48 0 // albany to state
+bs 0.5 // @salv army
+rd 20 47
+sl 0.5 false
+rd 20 100 // albany to green
+sl 0.5 true

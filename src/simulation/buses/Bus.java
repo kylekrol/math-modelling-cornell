@@ -21,7 +21,7 @@ public class Bus {
 	}
 
 	/** Updates gas usage given an amount of energy e consumed in joules */
-	private void combustionEnergy(double e) {
+	private void runEngine(double e) {
 		if(e >= 0)
 			gasUsage += Constants.GAS_PER_JOULE * e / Constants.BUSS_EFF;
 		else
@@ -39,7 +39,7 @@ public class Bus {
 	 */
 	public void accelerate(double vf, double grade) {
 		assert vf > v;
-		combustionEnergy(0.5d * Constants.BUSS_MASS * (vf*vf - v*v));
+		runEngine(0.5d * Constants.BUSS_MASS * (vf*vf - v*v));
 		v = vf;
 	}
 
@@ -55,10 +55,9 @@ public class Bus {
 	public void travel(double length, double elevation) {
 		double t = Constants.BUSS_MASS * length * (Constants.ROLL_FRIC + Constants.DRAG_CONST * v*v);
 		double u = Constants.BUSS_MASS * 9.81d * elevation;
-		combustionEnergy(t + u);
+		runEngine(t + u);
 	}
 
-	
 	public void brake(double vf) {
 		v = (v < vf ? v : vf);
 	}
