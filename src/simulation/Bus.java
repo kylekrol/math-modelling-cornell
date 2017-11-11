@@ -1,5 +1,8 @@
 package simulation;
 
+/**
+ * 
+ */
 public class Bus {
 
 	/** Gas used in gallons */
@@ -18,11 +21,23 @@ public class Bus {
 		return v;
 	}
 	
+	/**
+	 * 
+	 * @param e
+	 */
+	private void energyConsumed(double e) {
+		// TODO
+	}
+	
 	public void accelerate(double vf, double grade) {
 		// TODO
 	}
 	
 	public void travel(double length, double grade) {
+		// TODO
+	}
+	
+	public void potential(double length, double grade) {
 		// TODO
 	}
 	
