@@ -23,7 +23,7 @@ public class Bus {
 	/** Updates gas usage given an amount of energy e consumed in joules */
 	private void combustionEnergy(double e) {
 		assert e > 0;
-		gasUsage += Constants.GAS_PER_JOULE * e / Constants.ENGINE_EFFICIENCY;
+		gasUsage += Constants.GAS_PER_JOULE * e / Constants.BUSS_EFF;
 	}
 
 	/**
