@@ -60,8 +60,15 @@ public class RouteFactory {
 	}
 	
 	private static BusStop loadBusStop(String[] line, int i) {
-		// TODO
-		return null;
+		double congestion = 0.0d;
+		try {
+			if(line.length < 3) throw new NumberFormatException();
+			congestion = Double.parseDouble(line[1]);
+		} catch(NumberFormatException e) {
+			System.err.println("Imporperly formatted Road on line " + i);
+			System.exit(-1);
+		}
+		return new BusStop(congestion);
 	}
 	
 	private static StopSign loadStopSign(String[] line, int i) {
