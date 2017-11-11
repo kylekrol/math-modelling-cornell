@@ -38,6 +38,6 @@ public class Road implements Element {
 
 	@Override
 	public void drive(Bus bus) {
-		bus.drive(this);
+		
 	}
 }
