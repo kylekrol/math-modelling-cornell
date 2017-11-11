@@ -43,14 +43,24 @@ public class Bus {
 		v = vf;
 	}
 
+	/**
+	 * Applies a travel energy cost to the bus along a length with a specific
+	 * elevation change.
+	 * 
+	 * @param length
+	 * 		length of the travel distance
+	 * @param elevation
+	 * 		elevation change during the travel distance
+	 */
 	public void travel(double length, double elevation) {
 		double t = Constants.BUSS_MASS * length * (Constants.ROLL_FRIC + Constants.DRAG_CONST * v*v);
 		double u = Constants.BUSS_MASS * 9.81d * elevation;
 		combustionEnergy(t + u);
 	}
 
+	
 	public void brake(double vf) {
-		v = vf;
+		v = (v < vf ? v : vf);
 	}
 
 	public void idle(double time) {
