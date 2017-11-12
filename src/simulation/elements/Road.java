@@ -16,8 +16,6 @@ public class Road implements Element {
 	private double speed;
 	/** Elevation change in the road */
 	private double elevation;
-	/** Grade of the road */
-	private double grade;
 	
 	/** Set the parameters in a new Road object */
 	public Road(double speed, double length, double elevation) {
@@ -28,7 +26,6 @@ public class Road implements Element {
 
 	@Override
 	public void drive(Bus bus) {
-		bus.accelerate(speed, elevation);
-		bus.travel(length, elevation);
+		bus.travel(speed, length, elevation);
 	}
 }

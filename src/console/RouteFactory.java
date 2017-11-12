@@ -79,10 +79,10 @@ public class RouteFactory {
 	// ======================
 	
 	private static BusStop loadBusStop(String[] line, int i) {
-		double congestion = 0.0d;
+		int congestion = 0;
 		try {
 			if(line.length < 2) throw new NumberFormatException();
-			congestion = Double.parseDouble(line[1]);
+			congestion = Integer.parseInt(line[1]);
 		} catch(NumberFormatException e) {
 			System.err.println("Imporperly formatted BusStop on line " + i);
 			System.exit(-1);
@@ -90,7 +90,7 @@ public class RouteFactory {
 		return new BusStop(busStopWait(congestion));
 	}
 	
-	private static double busStopWait(double congestion) {
+	private static double busStopWait(int congestion) {
 		// TODO
 		return congestion;
 	}
@@ -100,10 +100,10 @@ public class RouteFactory {
 	// ======================
 	
 	private static StopSign loadStopSign(String[] line, int i) {
-		double congestion = 0.0d;
+		int congestion = 0;
 		try {
 			if(line.length < 2) throw new NumberFormatException();
-			congestion = Double.parseDouble(line[1]);
+			congestion = Integer.parseInt(line[1]);
 		} catch(NumberFormatException e) {
 			System.err.println("Imporperly formatted BusStop on line " + i);
 			System.exit(-1);
@@ -111,7 +111,7 @@ public class RouteFactory {
 		return new StopSign(stopSignWait(congestion));
 	}
 	
-	private static double stopSignWait(double congestion) {
+	private static double stopSignWait(int congestion) {
 		// TODO
 		return congestion;
 	}
@@ -121,11 +121,11 @@ public class RouteFactory {
 	// ======================
 	
 	private static StopLight loadStopLight(String[] line, int i) {
-		double congestion = 0.0d;
+		int congestion = 0;
 		boolean turn = false;
 		try {
 			if(line.length < 3) throw new NumberFormatException();
-			congestion = Double.parseDouble(line[1]);
+			congestion = Integer.parseInt(line[1]);
 			turn = Boolean.parseBoolean(line[2]);
 		} catch(IllegalArgumentException e) {
 			System.err.println("Imporperly formatted StopLight on line " + i);
@@ -134,7 +134,7 @@ public class RouteFactory {
 		return new StopLight(stopLightWait(congestion), turn);
 	}
 	
-	private static double stopLightWait(double congestion) {
+	private static double stopLightWait(int congestion) {
 		// TODO
 		return congestion;
 	}
@@ -144,10 +144,10 @@ public class RouteFactory {
 	// ======================
 	
 	private static Crosswalk loadCrosswalk(String[] line, int i) {
-		double congestion = 0.0d;
+		int congestion = 0;
 		try {
 			if(line.length < 2) throw new NumberFormatException();
-			congestion = Double.parseDouble(line[1]);
+			congestion = Integer.parseInt(line[1]);
 		} catch(NumberFormatException e) {
 			System.err.println("Imporperly formatted Crosswalk on line " + i);
 			System.exit(-1);
@@ -155,12 +155,12 @@ public class RouteFactory {
 		return new Crosswalk(crosswalkWait(congestion), crosswalkStop(congestion));
 	}
 	
-	private static double crosswalkWait(double congestion) {
+	private static double crosswalkWait(int congestion) {
 		// TODO
 		return congestion;
 	}
 	
-	private static double crosswalkStop(double congestion) {
+	private static double crosswalkStop(int congestion) {
 		// TODO
 		return congestion;
 	}

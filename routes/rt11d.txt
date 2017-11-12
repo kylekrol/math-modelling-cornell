@@ -20,10 +20,10 @@ bs 0.5 @commons
 rd 20 350 0
 sl 0.5 true @green_state
 rd 20 91 0
-sl 0.5 true @state_aurora
+sl 0.5 true @state_aurora // End double
 bs 0.5 @commons
 rd 20 160 0
-cw 0.5 @aurora_hudson
+cw 0.5 @aurora_hudson // For double change to ss
 rd 20 400 38
 bs 0.5 @husdon_columbia
 ss 0.5 @hudson_columbia
@@ -39,7 +39,7 @@ rd 20 250 0
 bs 0.5 @hudson_cottington
 cw 0.5 @hudson_cottington
 rd 20 300 0
-bs 0.5 @hudson_bikepath
+bs 0.5 @hudson_bikepath // For double insert ss
 rd 20 100 0
 ss 0.5 @grant_coddington
 rd 20 200 0
@@ -61,3 +61,29 @@ rd 20 86 0
 ss 0.5 @textor_grant
 rd 20 110 0
 bs 0.5 @mullerChapel
+rd 20 180 0
+cw 0.5 @roundabout
+rd 20 120 0
+cw 0.5
+rd 20 120 0
+ss 0.5 @conservatory_gym
+bs 0.5 @conservatory_gym
+rd 20 140 0
+cw 0.5 @conservatory_towerskyline
+rd 20 650 0
+bs 0.5 @towers
+rd 20 350 0
+cw 0.5 @Hillel
+rd 20 180 0
+cs 0.5 @baseballField // start double
+rd 20 800 0
+bs 0.5 @collegeCirc // Farthest point
+//
+rd 20 1000 0
+//
+// Insert double here
+//
+rd 20 100 0
+sl 0.5 true @Aurora_senecs
+rd 20 71 0
+// Starting point

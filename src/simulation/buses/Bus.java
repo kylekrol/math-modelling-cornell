@@ -29,40 +29,30 @@ public class Bus {
 	}
 
 	/**
-	 * Applies an acceleration energy cost to the bus after it increases it's
-	 * speed to the specified final velocity.
+	 * Simulates the bus traveling a segment of road with the provided speed,
+	 * distance, and elevation change. From these values, the change in kinetic
+	 * energy, change in potential, and energy work of frictions are
+	 * calculated and applied to the engine.
 	 * 
 	 * @param vf
-	 * 		the final velocity of the bus in meters per second
-	 * @param grade
-	 * 		the current grade of the road
+	 * 		the speed the bus will travel the road at
+	 * @param x
+	 * 		the distance being traveled
+	 * @param dy
+	 * 		the elevation change over the travel distance
 	 */
-	public void accelerate(double vf, double grade) {
-		assert vf > v;
-		runEngine(0.5d * Constants.BUSS_MASS * (vf*vf - v*v));
-		v = vf;
-	}
-
-	/**
-	 * Applies a travel energy cost to the bus along a length with a specific
-	 * elevation change.
-	 * 
-	 * @param length
-	 * 		length of the travel distance
-	 * @param elevation
-	 * 		elevation change during the travel distance
-	 */
-	public void travel(double length, double elevation) {
-		double t = Constants.BUSS_MASS * length * (Constants.ROLL_FRIC + Constants.DRAG_CONST * v*v);
-		double u = Constants.BUSS_MASS * 9.81d * elevation;
-		runEngine(t + u);
+	public void travel(double vf, double x, double dy) {
+		double k = 0.5d * Constants.BUSS_MASS * (vf*vf - v*v);
+		double u = Constants.BUSS_MASS * 9.81d * dy;
+		double w = Constants.BUSS_MASS * x * (Constants.ROLL_FRIC + Constants.DRAG_CONST * vf*vf);
+		runEngine(k + u - w);
 	}
 
 	public void brake(double vf) {
 		v = (v < vf ? v : vf);
 	}
 
-	public void idle(double time) {
+	public void idle(double dt) {
 		// TODO
 	}
 }
