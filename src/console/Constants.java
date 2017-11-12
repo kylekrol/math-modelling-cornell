@@ -30,6 +30,10 @@ public class Constants {
 	public static final double MAX_CHARGE = 166000d * 3600d;
 	/** Brake energy regain efficiency */
 	public static final double BRAKE_EFF = 0.23d;
+	/** Engine battery charging proportion */
+	public static final double ENGINE_RECHARGE_PROP = 0.025d;
+	/** Bus electric engine efficiency */
+	public static final double BUS_ELECTRIC_EFF = 0.95d;
 	
 	/** Chance of passing through a stop light */
 	public static final double LIGHT_THROUGH_CHANCE = 0.5d;

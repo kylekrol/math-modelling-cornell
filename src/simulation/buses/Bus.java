@@ -57,21 +57,31 @@ public class Bus {
 		double sin = dy / dx;
 		// Check if vf is attainable
 		double a = (v > vf ? -Constants.BUS_DECCEL : Constants.BUS_ACCEL);
-		double dxmin = (vf*vf - v*v) / 2*a;
-		if(dxmin >= dx) {
+		double dxmin = (vf*vf - v*v) / (2*a);
+		if(dxmin > dx) {
 			// vf is not attainable on this leg
 			double vend = Math.sqrt(v*v + 2*a*dx);
 			double dk = 0.5d * Constants.BUS_MASS * (vend*vend - v*v);
 			double du = Constants.BUS_MASS * 9.81d * dy;
-			double dw = workRes((a > 0 ? Constants.BUS_ACCEL : -Constants.BUS_DECCEL), v, dx);
+			double dw = workRes(a, v, dx);
+			
+			if(Double.isNaN(du + dk + dw)) {
+				try {
+					throw new Exception();
+				} catch(Exception excep) {
+					excep.printStackTrace();
+					System.exit(-1);
+				}
+			}
+			
 			run(dk + du + dw, sin);
 			v = vend;
 		} else {
 			// vf is attainable
 			double a1 = (v > vlim ? -Constants.BUS_DECCEL : Constants.BUS_ACCEL);
 			double a2 = (vf < vlim ? -Constants.BUS_DECCEL : Constants.BUS_ACCEL);
-			double dx1 = (vlim*vlim - v*v) / 2*a1;
-			double dx2 = (vf*vf - vlim*vlim) / 2*a2;
+			double dx1 = (vlim*vlim - v*v) / (2*a1);
+			double dx2 = (vf*vf - vlim*vlim) / (2*a2);
 			if(dx1 + dx2 <= dx) {
 				// Speed limit can be attained
 				double dk, du, dw;

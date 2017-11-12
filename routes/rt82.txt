@@ -1,0 +1,266 @@
+//Route 82 Elements
+bs 2 //A Lot
+rd 10 250 0 //A lot
+ss 2 //A lot and northcross road
+rd 10 110 0 //Northcross road
+bs 2 //Tennis Courts
+ss 2 //Northcross Road and Jessup road
+rd 25 66 0 //Jessup
+cw 2 //Jessup
+rd 25 42 0 //Jessup
+cw 2 //Jessup
+bs 2 //RPCC
+rd 25 53 0 //Jessup
+cw 2 //Jessup
+rd 25 190 0 //Jessup
+ss 2 //Jessup and Hasbrook
+rd 15 100 0 //Hasbrook
+cw 1 //Hasbrook
+rd 15 56 0 //Hasbrook
+cw 1 //Hasbrook
+rd 15 26 0 //Hasbrook
+bs 1 //Hasbrook
+cw 1 //Hasbrook
+rd 15 86 0 //Hasbrook
+cw 1 //Hasbrook
+rd 15 68 0 //Hasbrook
+cw 1 //Hasbrook
+rd 15 70 0 //Hasbrook
+ss 1 //Hasbrook and Pleasant Grove
+rd 15 21 0 //Cradit Farm and Pleasant Grove
+cw 2 //Cradit Farm and Pleasant Grove
+rd 20 450 0 //Cradit Farm
+cw 3 //Cradit Farm
+rd 20 21 0 //Cradit Farm
+cw 3 //Cradit Farm
+rd 20 20 0 //Cradit Farm
+bs 3 //Appel
+cw 3 //Helen Newman
+rd 20 100 0 //Cradit Farm
+cw 3 //Cradit Farm
+rd 20 63 0 //Cradit Farm
+cw 3 //Cradit Farm
+rd 20 48 0 //Cradit Farm
+bs 3 //Balch @ Cradit Farm
+rd 20 73 0 //CRadit Farm
+cw 3 //Cradit Farm
+rd 20 39 0 //Cradit Farm
+cw 3 //Cradit Farm
+rd 20 22 0 //Cradit Farm and Thurston
+ss 3 //Cradit Farm and Thurston
+rd 25 77 0 //Thurston
+cw 3 //Thurston
+rd 25 96 0 //Thurston
+sl 3 false //Thurston and University
+rd 25 140 0 //East ave
+cw 3 //East ave
+rd 25 53 0 //East Ave
+bs 3 //Goldwin Smith
+rd 25 27 0 //East Ave
+cw 3 //East Ave
+rd 25 130 0 //East ave
+cw 3 //East ave
+rd 25 97 0 //East Ave
+ss 3 //East Ave and Tower Rd
+rd 25 71 0 //Tower Road
+bs 3 //Uris Hall
+cw 3 //Tower Road
+rd 25 170 0 //Tower Road
+sl 3 false //Tower and Garden
+rd 25 36 0 //Tower
+bs 3 //Corson/Mudd
+rd 25 66 0 //Tower
+cw 2 //Tower
+rd 25 57 0 //Tower
+cw 2 //Tower
+rd 25 86 0 //Tower
+cw 2 //Tower
+rd 25 61 0 //Tower
+cw 2 //Tower near parking lot
+rd 25 45 0 //Tower
+cw 2 //Tower
+bs 2 //Bradfield Hall
+rd 25 59 0 //Tower
+cw 1 //Tower
+rd 25 140 0 //Tower
+cw 1 //Tower
+rd 25 97 0 //Tower
+cw 1 //Tower and Wing
+rd 25 74 0 //Tower
+bs 1 //Dairy Bar
+rd 25 83 0 //Tower
+ss 1 //Tower and Judd Falls
+rd 25 57 0 //Tower
+cw 1 //Tower and Post
+rd 25 140 0 //Tower
+bs 1 //Boyce Thompson
+rd 25 85 0 //Tower
+cw 1 //Tower Road
+rd 25 160 0 //Tower
+ss 1 //Tower and Campus
+rd 30 71 0 //Campus 
+cw 2 //Vet Medical Center
+rd 30 54 0 //Vet Medical Center
+cw 2 //Vet Medical Center
+rd 30 40 0 //Vet Medical Center
+cw 2 //Vet Medical Center
+rd 30 66 0 //Vet Medical Center
+bs 2 //B Lot @ Vet Medical Center
+cw 2 //Vet Medical Center
+rd 30 44 0 //Campus
+cw 2 //Campus
+rd 30 110 0 //Campus
+ss 1 //Campus and Caldwell
+rd 30 31 0 //Caldwell
+cw 1 //Caldwell
+rd 30 110 0 //Caldwell
+ss 1 //Caldwell and Dryden
+rd 30 750 0 //Dryden
+ss 2 //Dryden
+rd 30 140 0 //Dryden
+sl 2 false //Dryden and Pine tree
+rd 30 500 0 //Dryden
+ss 2 //Dryden and Hoy
+rd 30 110 0 //Dryden
+bs 1 //Dryden Rd @ Humphrey's Crosswalk
+cw 1 //Dryden
+rd 30 140 0 //Dryden
+sl 2 true //Dryden and Maple
+rd 30 200 0 //Maple
+bs 2 //Fairview/Maplewood Pkwy Apartments
+rd 30 290 0 //Maple
+bs 2 //East Ithaca Apartments
+rd 30 140 0 //Maple
+cw 1 //Maple
+rd 30 350 0 //Maple
+ss 1 //Maple and Pine tree
+rd 30 260 0 //Pine Tree
+bs 1 //Ciser
+rd 15 120 0 //East Hill plaza
+bs 1 //East hill office 
+rd 15 160 0 //East Hill plaza
+cw 1 //East hill plaza
+rd 15 70 0 //East hill Plaza
+ss 1 //East Hill plaza
+rd 15 28 0 //East Hill plaza
+ss 1 //East Hill plaza
+rd 15 140 0 //East Hill Plaza
+bs 2 //East Hill Plaza
+rd 15 76 0 //East Hill Plaza
+ss 1 //East Hill Plaza
+rd 15 290 0 //East Hill Plaza
+cw 1 //East Hill Plaza
+rd 15 170 0 //East Hill Plaza
+bs 1 //East Hill Plaza
+rd 15 40 0 //East hill Plaza
+ss 1 //East Hill and Pine Tree
+rd 30 210 0 //Pine Tree
+cw 1 //Maple and Pine Tree
+//
+rd 30 350 0 //Maple
+cw 1 //Maple
+rd 30 140 0 //Maple
+bs 2 //East Ithaca Apartments
+rd 30 290 0 //Maple
+bs 2 //Fairview/Maplewood Pkwy Apartments
+rd 30 200 0 //Maple
+sl 2 true //Dryden and Maple
+rd 30 140 0 //Dryden
+cw 1 //Dryden
+bs 1 //Dryden Rd @ Humphrey's Crosswalk
+rd 30 110 0 //Dryden
+ss 2 //Dryden and Hoy
+rd 30 500 0 //Dryden
+sl 2 false //Dryden and Pine tree
+rd 30 140 0 //Dryden
+ss 2 //Dryden
+rd 30 750 0 //Dryden
+ss 1 //Caldwell and Dryden
+rd 30 110 0 //Caldwell
+cw 1 //Caldwell
+rd 30 31 0 //Caldwell
+ss 1 //Campus and Caldwell
+rd 30 110 0 //Campus
+cw 2 //Campus
+rd 30 44 0 //Campus
+cw 2 //Vet Medical Center
+bs 2 //Vet Medical Center @ B lot
+rd 30 66 0 //Vet Medical Center
+cw 2 //Vet Medical Center
+rd 30 40 0 //Vet Medical Center
+cw 2 //Vet Medical Center
+rd 30 54 0 //Vet Medical Center
+cw 2 //Vet Medical Center
+rd 30 71 0 //Campus 
+ss 1 //Tower and Campus
+rd 25 160 0 //Tower
+cw 1 //Tower Road
+rd 25 85 0 //Tower
+bs 1 //Boyce Thompson
+rd 25 140 0 //Tower
+cw 1 //Tower and Post
+rd 25 57 0 //Tower
+ss 1 //Tower and Judd Falls
+rd 25 83 0 //Tower
+bs 1 //Dairy Bar accross street
+rd 25 74 0 //Tower
+cw 1 //Tower and Wing
+rd 25 97 0 //Tower
+cw 1 //Tower
+rd 25 140 0 //Tower
+cw 1 //Tower
+rd 25 59 0 //Tower
+bs 2 //Bradfield Hall
+cw 2 //Tower
+rd 25 45 0 //Tower
+cw 2 //Tower near parking lot
+rd 25 61 0 //Tower
+cw 2 //Tower
+rd 25 86 0 //Tower
+cw 2 //Tower
+rd 25 57 0 //Tower
+cw 2 //Tower
+rd 25 66 0 //Tower
+bs 3 //Kenedy hall
+rd 25 36 0 //Tower
+sl 3 false //Tower and Garden
+rd 25 170 0 //Tower Road
+cw 3 //Tower Road
+bs 3 //Uris Hall
+rd 25 71 0 //Tower Road
+ss 3 //East Ave and Tower Rd
+rd 25 97 0 //East Ave
+cw 3 //East ave
+rd 25 130 0 //East ave
+cw 3 //East Ave
+rd 25 27 0 //East Ave
+bs 3 //Goldwin Smith
+rd 25 53 0 //East Ave
+cw 3 //East ave
+rd 25 140 0 //East ave
+sl 3 false //Thurston and University
+rd 25 96 0 //Thurston
+cw 3 //Thurston
+rd 25 90 0 //Thurston
+bs 3 //Balch Hall @ Thurston
+rd 30 42 0 //Thurston
+cw 2 //Wait and Thurston
+rd 25 190 0 //Wait
+cw 1 //Wait and Triphammer
+rd 25 220 0 //Triphammer
+cw 1 //Triphammer and Jessup
+bs 1 //Jessup @ Triphammer
+rd 25 240 0 //Jessup
+cw 2 //Jessup and Northcross
+rd 25 63 0 //Jessup
+cw 2 //Jessup
+rd 25 35 0 //Jessup
+cw 2 //Jessup
+rd 25 49 0 //Jessup
+cw 2 //Jessup
+rd 25 190 0 //Jessup
+ss 2 //Jessup and Pleasant Grove
+rd 30 190 0 //Pleasant Grove
+cw 1 //Pleasant Grove and A Lot
+rd 15 53 0 //A Lot
+bs 2 //A Lot
