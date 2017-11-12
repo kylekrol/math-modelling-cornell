@@ -1,6 +1,5 @@
 package simulation.elements;
 
-import simulation.WaitElement;
 import simulation.buses.Bus;
 
 /**

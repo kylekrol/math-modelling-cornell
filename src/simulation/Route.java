@@ -15,11 +15,12 @@ public class Route {
 	
 	/** Creates a new route out of the given elements */
 	public Route() {
-		
+		this.start = null;
+		this.tail = null;
 	}
 	
 	/** Adds the passed route element to this route */
-	public void add(Element element) {
+	public void add(Object element) {
 		if(start == null) {
 			start = new Node(element);
 			tail = start;
@@ -50,7 +51,7 @@ public class Route {
 	public void drive(Bus bus) {
 		Node node = start;
 		while(node != null) {
-			node.element.drive(bus);
+			// TODO
 			node = node.next;
 		}
 	}
@@ -59,12 +60,12 @@ public class Route {
 	private class Node {
 		
 		/** Route element at this node */
-		private Element element;
+		private Object element;
 		/** Pointer to the next element's node */
 		private Node next;
 		
 		/** Constructs a new route element node */
-		private Node(Element element) {
+		private Node(Object element) {
 			this.element = element;
 		}
 	}

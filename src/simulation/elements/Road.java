@@ -1,6 +1,5 @@
 package simulation.elements;
 
-import simulation.Element;
 import simulation.buses.Bus;
 
 /**
@@ -23,8 +22,7 @@ public class Road implements Element {
 		this.speed = speed;
 		this.elevation = elevation;
 	}
-
-	@Override
+	
 	public void drive(Bus bus) {
 		bus.travel(speed, length, elevation);
 	}

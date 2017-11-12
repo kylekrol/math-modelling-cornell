@@ -1,7 +1,6 @@
 package simulation.elements;
 
 import console.Constants;
-import simulation.WaitElement;
 import simulation.buses.Bus;
 
 /**
