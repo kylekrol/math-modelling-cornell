@@ -42,9 +42,9 @@ public class Bus {
 	 * 		the elevation change over the travel distance
 	 */
 	public void travel(double vf, double x, double dy) {
-		double k = 0.5d * Constants.BUSS_MASS * (vf*vf - v*v);
-		double u = Constants.BUSS_MASS * 9.81d * dy;
-		double w = Constants.BUSS_MASS * x * (Constants.ROLL_FRIC + Constants.DRAG_CONST * vf*vf);
+		double k = 0.5d * Constants.BUS_MASS * (vf*vf - v*v);
+		double u = Constants.BUS_MASS * 9.81d * dy;
+		double w = Constants.BUS_MASS * x * (Constants.ROLL_FRIC + Constants.DRAG_CONST * vf*vf);
 		runEngine(k + u - w);
 	}
 
