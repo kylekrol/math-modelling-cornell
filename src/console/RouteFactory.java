@@ -15,6 +15,7 @@ import simulation.elements.Road;
 import simulation.elements.StopLight;
 import simulation.elements.StopSign;
 
+/** Class responsible for loading Route files into memory */
 public class RouteFactory {
 
 	/**
@@ -56,10 +57,17 @@ public class RouteFactory {
 		return new Route(elements);
 	}
 	
-	// ====================================================
-	// Loading Road elements
-	// ======================
-	
+	/**
+	 * Loads a Road object from the split line of a file. Takes in the current
+	 * line number for error message purposes.
+	 * 
+	 * @param line
+	 * 		current file line split on a " "
+	 * @param i
+	 * 		the current line number
+	 * @return
+	 * 		the parsed Road object
+	 */
 	private static Road loadRoad(String[] line, int i) {
 		double speed = 0.0d, length = 0.0d, elevation = 0.0d;
 		try {
@@ -74,10 +82,17 @@ public class RouteFactory {
 		return new Road(speed, length, elevation);
 	}
 	
-	// ====================================================
-	// Loading BusStop elements
-	// ======================
-	
+	/**
+	 * Loads a BusStop object from the split line of a file. Takes in the
+	 * current line number for error message purposes.
+	 * 
+	 * @param line
+	 * 		current file line split on a " "
+	 * @param i
+	 * 		the current line number
+	 * @return
+	 * 		the parsed BusStop object
+	 */
 	private static BusStop loadBusStop(String[] line, int i) {
 		int congestion = 0;
 		try {
@@ -90,15 +105,23 @@ public class RouteFactory {
 		return new BusStop(busStopWait(congestion));
 	}
 	
+	/** Loads a crosswalk wait time for the given congestion level */
 	private static double busStopWait(int congestion) {
 		// TODO
 		return congestion;
 	}
 	
-	// ====================================================
-	// Loading StopSign elements
-	// ======================
-	
+	/**
+	 * Loads a StopSign object from the split line of a file. Takes in the
+	 * current line number for error message purposes.
+	 * 
+	 * @param line
+	 * 		current file line split on a " "
+	 * @param i
+	 * 		the current line number
+	 * @return
+	 * 		the parsed StopSign object
+	 */
 	private static StopSign loadStopSign(String[] line, int i) {
 		int congestion = 0;
 		try {
@@ -111,15 +134,23 @@ public class RouteFactory {
 		return new StopSign(stopSignWait(congestion));
 	}
 	
+	/** Loads a stop sign wait time for the given congestion level */
 	private static double stopSignWait(int congestion) {
 		// TODO
 		return congestion;
 	}
 	
-	// ====================================================
-	// Loading StopLight elements
-	// ======================
-	
+	/**
+	 * Loads a StopLight object from the split line of a file. Takes in the
+	 * current line number for error message purposes.
+	 * 
+	 * @param line
+	 * 		current file line split on a " "
+	 * @param i
+	 * 		the current line number
+	 * @return
+	 * 		the parsed StopLight object
+	 */
 	private static StopLight loadStopLight(String[] line, int i) {
 		int congestion = 0;
 		boolean turn = false;
@@ -134,15 +165,23 @@ public class RouteFactory {
 		return new StopLight(stopLightWait(congestion), turn);
 	}
 	
+	/** Loads a stop light wait time for the given congestion level */
 	private static double stopLightWait(int congestion) {
 		// TODO
 		return congestion;
 	}
 	
-	// ====================================================
-	// Loading Crosswalk elements
-	// ======================
-	
+	/**
+	 * Loads a Crosswalk object from the split line of a file. Takes in the
+	 * current line number for error message purposes.
+	 * 
+	 * @param line
+	 * 		current file line split on a " "
+	 * @param i
+	 * 		the current line number
+	 * @return
+	 * 		the parsed Crosswalk object
+	 */
 	private static Crosswalk loadCrosswalk(String[] line, int i) {
 		int congestion = 0;
 		try {
@@ -155,11 +194,13 @@ public class RouteFactory {
 		return new Crosswalk(crosswalkWait(congestion), crosswalkStop(congestion));
 	}
 	
+	/** Loads a crosswalk wait time for the given congestion level */
 	private static double crosswalkWait(int congestion) {
 		// TODO
 		return congestion;
 	}
 	
+	/** Loads a crosswalk stop chance for the given congestion level */
 	private static double crosswalkStop(int congestion) {
 		// TODO
 		return congestion;
