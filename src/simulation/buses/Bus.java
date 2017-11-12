@@ -26,14 +26,12 @@ public class Bus {
 	}
 
 	/** Updates gas usage given an amount of energy e consumed in joules */
-	private void runEngine(double e) {
-		
-		// System.out.println(Constants.GAS_PER_JOULE * e / Constants.BUS_EFF);
-		
+	private void run(double e) {
+		double gallons = Constants.GAS_PER_JOULE * e / Constants.BUS_EFF;
+		if(gallons == Double.NaN || gallons > 0.1d)
+			System.err.println("Energy request of " + gallons + " gal");
 		if(e >= 0)
-			gasUsage += (Constants.GAS_PER_JOULE * e / Constants.BUS_EFF > 1.0d ? 0.0d : Constants.GAS_PER_JOULE * e / Constants.BUS_EFF);
-		else
-			System.err.println("Negative energy request revieved");
+			gasUsage += gallons;
 	}
 	
 	public void travel(double vf, double vlim, double dx, double dy) {
@@ -81,9 +79,9 @@ public class Bus {
 				v = vf;
 			}
 		}
-		runEngine(dk1);
-		runEngine(dk1);
-		runEngine(du + dw);
+		run(dk1);
+		run(dk1);
+		run(du + dw);
 	}
 	
 	/**

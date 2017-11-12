@@ -1,1 +1,74 @@
 // Route 10 elements
+cw 3 //Near Schwartz
+rd 25 85 0 //College ave
+sl 3 false //college town
+rd 25 450 -28 //College ave
+bs 2 //Mitchel
+ss 2 //Intersection of college and mitchel
+rd 25 91 0 //Mitchel
+sl 3 //Intersection of mitchel and state
+rd 30 250 -18 //state
+cw 2 //state
+rd 30 110 0 //state
+sl 2 false //state
+rd 30 350 -30 //seneca
+cw 2 //Seneca way
+rd 30 190 0 //Seneca way
+sl 2 false //seneca and N. Aurora
+rd 30 95 0 //seneca
+bs 2 //Seneca commons
+sl 2 true //seneca and tioga
+rd 30 100 0 //tioga
+sl 2 false //tioga and E Buffalo
+rd 30 140 0 //Tioga
+bs 2 //Tioga court
+sl 2 true //Tioga and E. court
+rd 30 97 0 //E court
+sl 2 false //E court and N. aurora
+rd 30 150 0 //E court st into Linn st
+bs 1 //Court Linn
+cw 1 //Linn and university ave
+cw 1 //Linn and university ave
+rd 30 400 28 //university ave
+cw 1 //university ave
+rd 30 82 0 //University ave
+bs 1 //University @ cornell ave
+rd 30 280 0 //University ave
+bs 1 //University @ lake st
+ss 1 //University and lake
+rd 30 150 17 //university ave 
+ss 1 //University and stewart
+rd 30 97 10 //university ave
+bs 1 //Boldt hall
+rd 30 250 28 // university ave
+rd 30 350 0 //University ave
+bs 2 //Milstein hall
+rd 30 97 0 //University ave
+ss 3 //east and univsersity
+rd 25 110 0 //east ave
+cw 3 //east ave
+rd 25 70 0 //east ave
+bs 3 //Goldwin smith
+cw 3 //east ave
+rd 25 140 0 //east ave
+cw 3 //east ave
+rd 25 100 0 //east ave
+cw 3 //east ave and tower road
+rd 25 79 0 //east ave
+cw 3 //east ave
+rd 25 94 0 //east ave
+cw 3 //east ave
+rd 25 77 0 //east ave
+bs 3 //Sage hall
+ss 3 //east ave and campus road
+rd 25 110 0 //campus road
+cw 3 //campus road
+rd 25 100 0 //campus rd
+sl 3 true // campus road and college ave
+bs 3 //Anabel Taylor hall
+rd 25 65 0 //college ave 
+cw 3 //college ave
+rd 25 92 -14 //college ave
+cw 3 //college ave
+rd 25 77 0 //college ave 
+bs 3 //Schwartz

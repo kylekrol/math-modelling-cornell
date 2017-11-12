@@ -1,0 +1,141 @@
+//Route 81 Elements
+bs 2 //A Lot
+rd 10 250 0 //A lot
+ss 2 //A lot and northcross road
+rd 10 //Northcross road
+bs 2 //Tennis Courts
+ss 2 //Northcross Road and Jessup road
+rd 25 240 0 //Jessup Road
+bs 1 //Jessup @ Triphammer
+ss 1 //Jessup and Triphammer
+rd 25 250 0 //Triphammer
+ss 1 //Triphammer and Wait
+rd 25 190 0 //Wait
+ss 2 //Wait and Thurston
+rd 25 41 0 //Thurston
+bs 2 //Risley Hall
+rd 25 93 0 //Thurston
+cw 3 //Thurston
+rd 25 96 0 //Thurston
+sl 3 false //Thurston and University
+rd 25 140 0 //East ave
+cw 3 //East ave
+rd 25 53 0 //East Ave
+bs 3 //Goldwin Smith
+rd 25 27 0 //East Ave
+cw 3 //East Ave
+rd 25 130 0 //East ave
+cw 3 //East ave
+rd 25 97 0 //East Ave
+ss 3 //East Ave and Tower Rd
+rd 25 71 0 //Tower Road
+bs 3 //Uris Hall
+cw 3 //Tower Road
+rd 25 170 0 //Tower Road
+sl 3 false //Tower and Garden
+rd 25 36 0 //Tower
+bs 3 //Corson/Mudd
+rd 25 66 0 //Tower
+cw 2 //Tower
+rd 25 57 0 //Tower
+cw 2 //Tower
+rd 25 86 0 //Tower
+cw 2 //Tower
+rd 25 61 0 //Tower
+cw 2 //Tower near parking lot
+rd 25 45 0 //Tower
+cw 2 //Tower
+bs 2 //Bradfield Hall
+rd 25 59 0 //Tower
+cw 1 //Tower
+rd 25 140 0 //Tower
+cw 1 //Tower
+rd 25 97 0 //Tower
+cw 1 //Tower and Wing
+rd 25 74 0 //Tower
+bs 1 //Dairy Bar
+rd 25 83 0 //Tower
+ss 1 //Tower and Judd Falls
+rd 25 57 0 //Tower
+cw 1 //Tower and Post
+rd 25 140 0 //Tower
+bs 1 //Boyce Thompson
+rd 25 140 0 //Tower
+cw 1 //Tower and Post
+rd 25 57 0 //Tower
+ss 1 //Tower and Judd Falls
+rd 25 83 0 //Tower
+bs 1 //Dairy Bar accross street
+rd 25 74 0 //Tower
+cw 1 //Tower and Wing
+rd 25 97 0 //Tower
+cw 1 //Tower
+rd 25 140 0 //Tower
+cw 1 //Tower
+rd 25 59 0 //Tower
+bs 2 //Bradfield Hall
+cw 2 //Tower
+rd 25 45 0 //Tower
+cw 2 //Tower near parking lot
+rd 25 61 0 //Tower
+cw 2 //Tower
+rd 25 86 0 //Tower
+cw 2 //Tower
+rd 25 57 0 //Tower
+cw 2 //Tower
+rd 25 66 0 //Tower
+bs 3 //Kenedy Hall
+rd 25 36 0 //Tower
+sl 3 false //Tower and Garden
+rd 25 170 0 //Tower Road
+cw 3 //Tower Road
+bs 3 //Uris Hall accross street
+rd 25 71 0 //Tower Road
+ss 3 //East Ave and Tower Rd
+rd 25 97 0 //East Ave
+cw 3 //East ave
+rd 25 130 0 //East ave
+cw 3 //East Ave
+rd 25 27 0 //East Ave
+bs 3 //Rockefeller Hall
+rd 25 53 0 //East Ave
+cw 3 //East ave
+rd 25 110 0 //East ave
+sl 3 false //Thurston and University
+rd 25 130 0 //Thurston
+cw 3 //Thurston
+rd 25 76 0 //Thurston
+cw 3 //Cradit Farm and Thurston
+rd 20 23 0 //Cradit Farm
+cw 3 //Cradit farm
+rd 20 41 0 //Cradit Farm
+cw 3 //Cradit farm
+rd 20 120 0 //Cradit Farm
+cw 3 //Cradit Farm
+rd 20 56 0 //Cradit Farm
+cw 3 //Cradit farm
+rd 20 80 0 //Cradit farm
+cw 3 //In front of Helen Newman
+rd 20 36 0 //Cradit Farm
+bs 3 //Helen Newman Hall
+cw 3 //Helen Newman
+rd 20 29 0 //Cradit Farm
+cw 3 //Cradit farm
+rd 20 450 0 //Cradit Farm
+ss 1 //Cradit Farm and Pleasant Grove
+rd 15 98 0 //Hasbrook
+cw 1 //Hasbrook
+rd 15 68 0 //Hasbrook
+cw 1 //Hasbrook
+rd 15 62 0 //Hasbrook
+bs 1 //Cradit Farm @ Pleasant Grove
+rd 15 59 0 //Hasbrook
+cr 1 //Hasbrook
+rd 15 71 0 //Hasbrook
+ss 1 //Hasbrook and Pleasant Grove
+rd 30 160 0 //Pleasant Grove
+cw 1 //Hasbrook and Jessup
+rd 30 190 0 //Pleasant Grove
+cw 1 //Pleasant Grove and A lot
+rd 10 62 0 //A Lot
+bs 2 //A lot
