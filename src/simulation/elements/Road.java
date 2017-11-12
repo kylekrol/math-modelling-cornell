@@ -29,6 +29,6 @@ public class Road {
 	}
 	
 	public void drive(Bus bus, double vf) {
-		bus.travel(speed, length, elevation);
+		bus.travel(vf, speed, length, elevation);
 	}
 }

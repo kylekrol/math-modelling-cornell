@@ -51,12 +51,15 @@ public class Route {
 	 * 		the bus driving through the route
 	 */
 	public void drive(Bus bus) {
-		Node current = processOnStop(bus, start);
-		while(current != null) {
-			if(current.isWaitElement())
-				
-			
-			current = current.next;
+		Node node = processOnStop(bus, start);
+		while(node != null) {
+			if(node.element instanceof Road) {
+				node = processOnRoad(bus, node);
+			} else if(bus.speed() == 0.0d) {
+					node = processOnStop(bus, node); 
+			} else {
+				node = processOnSoftTurn(bus, node);
+			}
 		}
 	}
 	
