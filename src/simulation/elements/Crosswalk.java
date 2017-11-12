@@ -1,7 +1,5 @@
 package simulation.elements;
 
-import simulation.buses.Bus;
-
 /**
  * Represents a crosswalk element in a bus route. A crosswalk element will,
  * with a specified stopping probability, cause the bus to come to a complete
@@ -17,12 +15,19 @@ public class Crosswalk extends WaitElement {
 		super(wait);
 		this.stopChance = stopChance;
 	}
+	
+	@Override
+	public boolean hasWait() {
+		return (WaitElement.rand.nextDouble() < stopChance);
+	}
 
 	@Override
-	public void drive(Bus bus) {
-		if (WaitElement.rand.nextDouble() < stopChance) {
-			bus.brake(0.0d);
-			bus.idle(super.wait);
-		}
+	public boolean hasDeltaV() {
+		return (WaitElement.rand.nextDouble() < stopChance);
+	}
+
+	@Override
+	public double getVelocity() {
+		return 0.0d;
 	}
 }

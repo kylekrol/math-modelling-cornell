@@ -1,7 +1,6 @@
 package simulation.elements;
 
 import console.Constants;
-import simulation.buses.Bus;
 
 /**
  * Represents a stop light element in a bus route. A stop light element will
@@ -11,6 +10,11 @@ import simulation.buses.Bus;
  */
 public class StopLight extends WaitElement {
 
+	/**
+	 * Boolean describing the light's state. This variable is refreshed
+	 * whenever hasEffect() is called
+	 */
+	private boolean isGreen;
 	/** Whether or not the bus is turning at this light */
 	private boolean turn;
 
@@ -22,14 +26,20 @@ public class StopLight extends WaitElement {
 		super(wait);
 		this.turn = turn;
 	}
-
+	
 	@Override
-	public void drive(Bus bus) {
-		if(WaitElement.rand.nextDouble() < Constants.LIGHT_THROUGH_CHANCE) {
-			if(turn) bus.brake(Constants.TURN_SPEED);
-		} else {
-			bus.brake(0.0d);
-			bus.idle(wait);
-		}
+	public boolean hasWait() {
+		return (WaitElement.rand.nextDouble() < Constants.LIGHT_THROUGH_CHANCE);
+	}
+	
+	@Override
+	public boolean hasDeltaV() {
+		isGreen = (WaitElement.rand.nextDouble() < Constants.LIGHT_THROUGH_CHANCE);
+		return !(isGreen && !turn);
+	}
+	
+	@Override
+	public double getVelocity() {
+		return (isGreen ? Constants.TURN_SPEED : 0.0d);
 	}
 }

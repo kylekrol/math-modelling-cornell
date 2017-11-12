@@ -125,12 +125,12 @@ rd 30 250 0
 ss 1 @hudson_grandview
 bs 1 @hudson_grandview
 rd 30 180 0
-rd 15 120 23
+rd 15 120 -23
 cw 2
 bs 2 @S hill elementary
 rd 15 130 0
 cw 1
-rd 30 110 11
+rd 30 110 -11
 ss 1 @hudson_columbia
 bs 1 @husdon_columbia
 rd 30 400 38

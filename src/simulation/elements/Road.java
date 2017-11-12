@@ -7,7 +7,7 @@ import simulation.buses.Bus;
  * section of road that a bus drives along at constant speed with no chance of
  * stopping.
  */
-public class Road implements Element {
+public class Road {
 	
 	/** Length of the road in meters */
 	private double length;
@@ -23,7 +23,12 @@ public class Road implements Element {
 		this.elevation = elevation;
 	}
 	
-	public void drive(Bus bus) {
+	/** Returns expected travel speed on this road */
+	public double speed() {
+		return speed;
+	}
+	
+	public void drive(Bus bus, double vf) {
 		bus.travel(speed, length, elevation);
 	}
 }

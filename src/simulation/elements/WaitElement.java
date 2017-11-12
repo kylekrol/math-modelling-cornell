@@ -22,15 +22,21 @@ public abstract class WaitElement {
 	}
 	
 	/**
+	 * Returns whether or not this element has an idle requirement during this
+	 * iteration of the route.
+	 */
+	public abstract boolean hasWait();
+	
+	/**
 	 * Returns whether or not this wait element will affect the bus traveling
 	 * through. This method returns true if the wait element is imposing a
 	 * velocity requirement.
 	 */
-	public abstract boolean hasEffect();
+	public abstract boolean hasDeltaV();
 	
 	/**
 	 * Returns the velocity requirement this wait element is imposing. Should
-	 * only be called if hasEffect() returned true.
+	 * only be called if hasDeltaV() returned true.
 	 */
 	public abstract double getVelocity();
 	
