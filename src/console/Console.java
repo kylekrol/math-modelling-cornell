@@ -11,50 +11,22 @@ public class Console {
 	public static void main(String[] args) {
 		try {
 			
-			long start = System.currentTimeMillis();
-			
 			Route route = RouteFactory.loadRoute("routes/rt11.txt");
 			Bus bus = new Bus();
 			
-			System.out.println(System.lineSeparator() + "Rt 11");
 			for(int i = 0; i < 10; i++) {
 				route.drive(bus);
-				System.out.println("Distance: " + (bus.totalTravelled() * 0.000621371d));
-				System.out.println("Gallons:  " + bus.gasUsage());
-				System.out.println("MPG:      " + ((bus.totalTravelled() * 0.000621371d)/bus.gasUsage()));
+				System.out.println((bus.totalTravelled()*0.000621371d)/bus.gasUsage());
 			}
 			
-			System.out.println(System.lineSeparator() + "Rt 10");
 			route = RouteFactory.loadRoute("routes/rt10.txt");
 			bus = new Bus();
-			for(int i = 0; i < 5; i++) {
-				route.drive(bus);
-				System.out.println("Distance: " + (bus.totalTravelled() * 0.000621371d));
-				System.out.println("Gallons:  " + bus.gasUsage());
-				System.out.println("MPG:      " + ((bus.totalTravelled() * 0.000621371d)/bus.gasUsage()));
-			}
 			
-			System.out.println(System.lineSeparator() + "Rt 81");
 			route = RouteFactory.loadRoute("routes/rt81.txt");
 			bus = new Bus();
-			for(int i = 0; i < 5; i++) {
-				route.drive(bus);
-				System.out.println("Distance: " + (bus.totalTravelled() * 0.000621371d));
-				System.out.println("Gallons:  " + bus.gasUsage());
-				System.out.println("MPG:      " + ((bus.totalTravelled() * 0.000621371d)/bus.gasUsage()));
-			}
 			
-			System.out.println(System.lineSeparator() + "Rt 15");
 			route = RouteFactory.loadRoute("routes/rt15.txt");
 			bus = new Bus();
-			for(int i = 0; i < 5; i++) {
-				route.drive(bus);
-				System.out.println("Distance: " + (bus.totalTravelled() * 0.000621371d));
-				System.out.println("Gallons:  " + bus.gasUsage());
-				System.out.println("MPG:      " + ((bus.totalTravelled() * 0.000621371d)/bus.gasUsage()));
-			}
-			
-			System.out.println(System.lineSeparator() + "Time: " + (System.currentTimeMillis() - start));
 			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

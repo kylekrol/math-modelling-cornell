@@ -1,5 +1,8 @@
 package simulation;
 
+import java.io.IOException;
+import java.io.OutputStream;
+
 import simulation.buses.Bus;
 import simulation.elements.Road;
 import simulation.elements.WaitElement;
@@ -9,6 +12,11 @@ import simulation.elements.WaitElement;
  * elements.
  */
 public class Route {
+	
+	/** Interface allowing choice data printing from the Console class */
+	public interface DataPrinter {
+		public String line();
+	}
 	
 	/** Start of the route element linked list */
 	private Node start;
@@ -32,16 +40,16 @@ public class Route {
 	}
 	
 	/**
-	 * Drives the bus through a route a specified number of times.
-	 * 
-	 * @param bus
-	 * 		the bus driving through the route
-	 * @param n
-	 * 		the number of times the bus will drive the route
+	 * Drives a bus through the route a specified number of times and writes
+	 * the data to the output stream via the provided data printer method
+	 * @throws IOException 
 	 */
-	public void drive(Bus bus, int n) {
-		for(int i = 0; i < n; i++)
+	public void drive(Bus bus, int n, OutputStream print, DataPrinter data) throws IOException {
+		for(int i = 0; i < n; i++) {
 			drive(bus);
+			print.write(data.line().getBytes());
+			print.write(System.lineSeparator().getBytes());
+		}
 	}
 	
 	/**
