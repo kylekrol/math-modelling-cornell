@@ -19,25 +19,39 @@ public class Console {
 			System.out.println(System.lineSeparator() + "Rt 11");
 			for(int i = 0; i < 10; i++) {
 				route.drive(bus);
-				System.out.println(bus.gasUsage());
+				System.out.println("Distance: " + (bus.totalTravelled() * 0.000621371d));
+				System.out.println("Gallons:  " + bus.gasUsage());
+				System.out.println("MPG:      " + ((bus.totalTravelled() * 0.000621371d)/bus.gasUsage()));
 			}
-			
-			route = RouteFactory.loadRoute("routes/rt10.txt");
-			bus = new Bus();
 			
 			System.out.println(System.lineSeparator() + "Rt 10");
-			for(int i = 0; i < 10; i++) {
+			route = RouteFactory.loadRoute("routes/rt10.txt");
+			bus = new Bus();
+			for(int i = 0; i < 5; i++) {
 				route.drive(bus);
-				System.out.println(bus.gasUsage());
+				System.out.println("Distance: " + (bus.totalTravelled() * 0.000621371d));
+				System.out.println("Gallons:  " + bus.gasUsage());
+				System.out.println("MPG:      " + ((bus.totalTravelled() * 0.000621371d)/bus.gasUsage()));
 			}
 			
+			System.out.println(System.lineSeparator() + "Rt 81");
 			route = RouteFactory.loadRoute("routes/rt81.txt");
 			bus = new Bus();
-			
-			System.out.println(System.lineSeparator() + "Rt 81");
-			for(int i = 0; i < 10; i++) {
+			for(int i = 0; i < 5; i++) {
 				route.drive(bus);
-				System.out.println(bus.gasUsage());
+				System.out.println("Distance: " + (bus.totalTravelled() * 0.000621371d));
+				System.out.println("Gallons:  " + bus.gasUsage());
+				System.out.println("MPG:      " + ((bus.totalTravelled() * 0.000621371d)/bus.gasUsage()));
+			}
+			
+			System.out.println(System.lineSeparator() + "Rt 15");
+			route = RouteFactory.loadRoute("routes/rt15.txt");
+			bus = new Bus();
+			for(int i = 0; i < 5; i++) {
+				route.drive(bus);
+				System.out.println("Distance: " + (bus.totalTravelled() * 0.000621371d));
+				System.out.println("Gallons:  " + bus.gasUsage());
+				System.out.println("MPG:      " + ((bus.totalTravelled() * 0.000621371d)/bus.gasUsage()));
 			}
 			
 			System.out.println(System.lineSeparator() + "Time: " + (System.currentTimeMillis() - start));

@@ -6,18 +6,32 @@ public class Bus {
 
 	/** Gas used in gallons */
 	private double gasUsage;
+	
+	private double totalTraval;
 	/** Current bus speed in meters per second */
 	private double v;
 
 	/** Creates a new bus object with zero gas usage and speed */
 	public Bus() {
+		this.totalTraval = 0.0d;
 		this.gasUsage = 0;
 		this.v = 0;
+	}
+	
+	/** Resets the fuel and distance counters to zero */
+	public void reset() {
+		this.gasUsage = 0.0d;
+		this.totalTraval = 0.0d;
 	}
 
 	/** Returns the bus's current gas usage in gallons */
 	public double gasUsage() {
 		return gasUsage;
+	}
+	
+	/** Returns the bus's current total travel distance in meters */
+	public double totalTravelled() {
+		return this.totalTraval;
 	}
 	
 	/** Returns the bus's current speed in meters per second */
@@ -35,6 +49,8 @@ public class Bus {
 	}
 	
 	public void travel(double vf, double vlim, double dx, double dy) {
+		this.totalTraval += dx;
+		
 		double dk1, dk2, du, dw;
 		double sin = dy / dx;
 		double ap = Constants.BUS_ACCEL - 9.81d * sin;

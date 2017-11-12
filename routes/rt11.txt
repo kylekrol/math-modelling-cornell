@@ -1,4 +1,4 @@
-// Route 11 daytime elements
+// Route 11 daytime elements 8.3 miles total
 rd 30 180 0
 sl 2 false @seneca_cayuga
 rd 30 140 0

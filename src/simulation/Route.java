@@ -63,6 +63,14 @@ public class Route {
 		}
 	}
 	
+	/**
+	 * Traverse all subsequent wait elements and return once a road element
+	 * or the end of the route has been discovered.
+	 * 
+	 * @param bus
+	 * @param next
+	 * @return
+	 */
 	private Node processOnStop(Bus bus, Node next) {
 		WaitElement element = null;
 		while(next != null && next.isWaitElement()) {
@@ -88,20 +96,24 @@ public class Route {
 	 */
 	private Node processOnRoad(Bus bus, Node current) {
 		double v = 0.0d;
+		boolean onWaitElement = false;
 		Node node = current.next;
 		while(node != null) {
 			if(node.isWaitElement()) {
 				if(((WaitElement) node.element).hasDeltaV()) {
 					v = ((WaitElement) node.element).getVelocity();
+					onWaitElement = true;
 					break;
 				}
 			} else {
 				v = ((Road) node.element).speed();
+				onWaitElement = false;
 				break;
 			}
 			node = node.next;
 		}
 		((Road) current.element).drive(bus, v);
+		if(onWaitElement) bus.brake(v);
 		return node;
 	}
 	

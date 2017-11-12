@@ -146,7 +146,7 @@ public class RouteFactory {
 		else if(congestion == 2)
 			return 20.0d;
 		else if(congestion == 3)
-			return 60.0d;
+			return 40.0d;
 		System.err.println("Invalid congestion argument");
 		System.exit(-1);
 		return 0.0d;
@@ -180,11 +180,11 @@ public class RouteFactory {
 	/** Loads a stop light wait time for the given congestion level */
 	private static double stopLightWait(int congestion) {
 		if(congestion == 1)
-			return 30.0d;
+			return 20.0d;
 		else if(congestion == 2)
-			return 60.0d;
+			return 30.0d;
 		else if(congestion == 3)
-			return 150.0d;
+			return 40.0d;
 		System.err.println("Invalid congestion argument");
 		System.exit(-1);
 		return 0.0d;
@@ -216,11 +216,11 @@ public class RouteFactory {
 	/** Loads a crosswalk wait time for the given congestion level */
 	private static double crosswalkWait(int congestion) {
 		if(congestion == 1)
-			return 5.0d;
-		else if(congestion == 2)
 			return 10.0d;
+		else if(congestion == 2)
+			return 20.0d;
 		else if(congestion == 3)
-			return 30.0d;
+			return 45.0d;
 		System.err.println("Invalid congestion argument");
 		System.exit(-1);
 		return 0.0d;

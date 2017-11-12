@@ -1,0 +1,139 @@
+//Route 15 Elements
+bs 2 //Seneca @ commons
+sl 2 false //Seneca and Tioga
+rd 30 180 0 //Seneca
+sl 2 false //Seneca and Cyuga
+rd 30 140 0 //Seneca
+cw 2 //Seneca and N Geneva
+rd 25 97 0 //N Geneva
+bs 1 //Geneva @ state
+sl 2 false //Geneva and state
+rd 25 100 0 //Geneva
+ss 1 //Geneva and W. Green street
+rd 25 100 0 //Geneva
+bs 1 //McGraw House
+rd 25 96 0 //Geneva
+ss 1 //Geneva and Clinton
+rd 25 76 0 //Clinton
+sl 1 false //Clinton and Albany
+rd 25 81 0 //Clinton
+cw 1 //Clinton and Fayette
+rd 25 100 0 //Clinton
+bs 1 //Clinton @ Fayette WB
+cw 1 //Clinton and plain
+rd 25 140 0 //Plain
+bs 1 //Plain @ Center SB
+cw 1 //Plain and Center
+rd 25 140 0 //Plain
+ss 2 //plain and N Titus
+rd 15 47 0 //Plain LOWER SPEED LIMIT
+ss 2 //plain and S Titus
+rd 25 120 0 //Plain
+bs 1 //Plain @ Wood SB
+ss 1 //Plain and Wood
+rd 25 210 0 //Plain
+bs 1 //Titus Towers
+rd 25 210 0 //Plain
+ss 2 //Plain and Elmira
+rd 30 160 0 //Elmira
+bs 2 //Elmira @ Reuse Center
+rd 30 40 0 //Elmira LOWER SPEED LIMIT
+cw 2 //Elmira
+rd 20 182 0 //Ithaca plaza
+bs 2 //Ithaca Plaza
+ss 2 //Ithaca Plaza and meadow
+rd 30 81 0 //Meadow
+sl 2 false //Fairgrounds memorial and meadow
+rd 30 130 0 //Meadow
+sl 2 false //Meadow and shopping center
+rd 30 120 0 //Meadow
+bs 2 //South meadow @ wood
+sl 2 false //meadow and wood
+rd 30 130 0 //Meadow
+sl 2 false //Meadow and South st
+rd 30 220 0 //Meadow
+sl 2 true //Meadow and Cecil Malone
+rd 30 120 0 //Cecil Malone
+cw 2 //Cecil Malone and shopping center
+rd 20 130 0 //Shopping center - 
+bs 2 //Wegmans
+cw 2 //Wegmans
+rd 15 120 0 //Shopping center - parking lot
+cw 2 //Shopping center
+rd 15 59 0 //Shopping center - parking lot LOWER SPEED LIMIT
+ss 2 //Shopping center
+rd 15 110 0 //Tops Supermarket
+bs 2 //Tops Supermarket
+cw 2 //Shopping center
+cw 2 //Shopping center
+rd 20 150 0 //Shopping center
+ss 2 //shopping center
+rd 20 160 0 //Shopping center
+cw 2 //Shopping center
+rd 10 57 0 //Shopping center - parking lot LOWER SPEED LIMIT
+ss 2 //shopping center
+cw 2 //shopping center (left turn through trafic)
+rd 10 87 0 //Shopping center - parking lot
+cw 2 //shopping center
+rd 10 110 0 //Shopping center - parking lot
+bs 2 //Memorial Parkway @ pet smart
+cw 2 //Shopping center
+rd 10 39 0 //Shopping center - parking lot LOWER SPEED LIMIT
+ss 2 //Shopping center
+rd 20 350 0 //Shoppiing center - road around
+bs 2 //Lowe's
+cw 2 //Shopping center
+rd 10 49 0 //Shopping center - parking lot LOWER SPEED LIMIT
+ss 2 //Shopping center
+rd 10 56 0 //shopping center LOWER SPEED LIMIT
+cw 2 //Shopping center
+rd 10 73 0 //shoppping center LOWER SPEED LIMIT
+cw 2 //Shopping center
+rd 10 57 0 //shopping center
+cw 2 //shopping center
+rd 10 69 0 //shopping center
+bs 2 //WalMart
+cw 2 //shopping center
+rd 10 120 0 //Shopping center
+ss 2 //shopping center
+rd 10 35 0 //shopping center
+ss 2 //shopping center
+rd 25 79 0 //shopping center
+sl 2 true //leaving shopping center
+rd 30 350 0 //Elmira
+sl 2 true //Elmira and Meadow
+rd 30 280 0 //Elmira
+cw 2 //Elmira
+rd 20 52 0 //Elmira
+bs 2 //Elmira @ Pudgies
+rd 30 140 0 //Elmira
+cw 2 //Elmira and Plain
+rd 25 210 0 //Plain
+bs 1 //Titus Towers
+rd 25 180 0 //plain
+bs 1 //Plain @ Wood NB
+ss 1 //Plain and Wood
+rd 25 120 0 //Plain
+ss 2 //Plain and S titus
+rd 15 41 0 //Plain LOWER SPEED LIMIT
+ss 2 //Plain and N Titus
+rd 25 140 0 //Plain
+bs 1 //Plain @ Center NB
+ss 1 //Plain and Center
+rd 25 130 0 //Plain
+ss 2 //Plain and Clinton
+rd 25 100 0 //Clinton 
+bs 1 //Clinton @ Fayette-EB
+cw 1 //Clinton and Fayette
+rd 25 80 0 //Clinton
+sl 1 false //Clinton and Albany
+rd 25 80 0 //Clinton
+ss 1 //Clinton and Geneva
+rd 25 100 0 //Geneva
+bs 1 //McGraw House
+rd 25 92 0 //Geneva
+ss 1 //Geneva and Green
+rd 30 140 0 //Green
+sl 2 //Green and Cayuga
+rd 30 110 0 //Green
+bs 2 //Green @ commons

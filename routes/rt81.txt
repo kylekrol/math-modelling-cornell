@@ -2,7 +2,7 @@
 bs 2 //A Lot
 rd 10 250 0 //A lot
 ss 2 //A lot and northcross road
-rd 10 //Northcross road
+rd 10 110 0 //Northcross road
 bs 2 //Tennis Courts
 ss 2 //Northcross Road and Jessup road
 rd 25 240 0 //Jessup Road
@@ -130,7 +130,7 @@ cw 1 //Hasbrook
 rd 15 62 0 //Hasbrook
 bs 1 //Cradit Farm @ Pleasant Grove
 rd 15 59 0 //Hasbrook
-cr 1 //Hasbrook
+cw 1 //Hasbrook
 rd 15 71 0 //Hasbrook
 ss 1 //Hasbrook and Pleasant Grove
 rd 30 160 0 //Pleasant Grove
