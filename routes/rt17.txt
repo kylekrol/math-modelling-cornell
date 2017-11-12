@@ -1,0 +1,75 @@
+//Route 17 Elements
+bs 2 //Tioga and Seneca
+sl 2 //Tioga and Seneca
+rd 30 190 0 //Seneca
+sl 2 true //Seneca and Cayuga
+rd 30 99 0 //Cayuga
+sl 2 false //Cayuga and Buffalo
+rd 30 140 0 //Cayuga
+sl 2 false //Cayuga and Court
+rd 30 220 0 //Cayuga
+cw 2 //Cayuga and Cascadilla
+rd 30 57 0 //Cayuga
+cw 2 //Cayuga
+rd 30 110 0 //Cayuga
+cw 1 //Cayuga and Marshal
+rd 30 130 0 //Cayuga
+cw 1 //Cayuga and Yates
+rd 30 130 0 //Cayuga
+sl 1 false //Cayuga and Tompkins
+rd 30 130 0 //Cayuga
+cw 1 //Cayuga and Lewis
+rd 30 130 0 //Cayuga
+cw 1 //Cayuga and Jay
+rd 30 150 0 //Cayuga
+sl 1 true //Cayuga and Lincoln
+rd 30 280 0 //Lincoln
+ss 2 //Lincoln and Dey
+rd 20 56 0 //Dey
+sl 2 false //Dey and Meadow
+rd 25 400 0 //Willow
+bs 1 //Transit Center
+//
+rd 25 400 0 //Willow
+sl 2 false //Dey and Meadow
+rd 20 56 0 //Dey
+ss 2 //Lincoln and Dey
+rd 30 280 0 //Lincoln
+sl 1 true //Cayuga and Lincoln
+rd 30 150 0 //Cayuga
+cw 1 //Cayuga and Jay
+rd 30 130 0 //Cayuga
+cw 1 //Cayuga and Lewis
+rd 30 130 0 //Cayuga
+sl 1 false //Cayuga and Tompkins
+rd 30 130 0 //Cayuga
+cw 1 //Cayuga and Yates
+rd 30 130 0 //Cayuga
+cw 1 //Cayuga and Marshal
+rd 30 110 0 //Cayuga
+cw 2 //Cayuga
+rd 30 57 0 //Cayuga
+cw 2 //Cayuga and Cascadilla
+rd 30 220 0 //Cayuga
+sl 2 false //Cayuga and Court
+rd 30 140 0 //Cayuga
+sl 2 false //Cayuga and Buffalo
+rd 30 99 0 //Cayuga
+sl 2 true //Cayuga and Seneca
+rd 30 140 0 //Seneca
+cw 2 //Seneca and Geneva
+rd 30 85 0 //Seneca
+sl 2 true //Seneca and Albany
+rd 30 59 0 //Albany
+bs 2 //Albany st
+rd 30 34 0 //Albany
+sl 2 false //Albany and State
+rd 30 100 0 //Albany
+sl 2 true //Albany and Green
+rd 30 81 0 //Green
+cw 2 //Green and Geneva
+rd 30 140 0 //Green
+sl 2 false //Greeb abd Cayuga
+rd 30 110 0 //Green
+bs 2 //Tompkins public library
+//

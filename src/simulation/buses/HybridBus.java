@@ -31,7 +31,6 @@ public class HybridBus extends Bus {
 			// Energy required from engine/battery
 			if(sin > 0.0d) {
 				// Steep grade so use engine
-				e *= (Constants.ENGINE_RECHARGE_PROP + 1.0d);
 				super.run(e, sin);
 				batCharge += e*Constants.ENGINE_RECHARGE_PROP;
 			} else {

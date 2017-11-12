@@ -23,7 +23,7 @@ public class Console {
 	
 	private static void getAllMPG() {
 		
-		final int ITERATIONS = 10000;
+		final int ITERATIONS = 100000;
 		
 		try {
 			Route route = RouteFactory.loadRoute("routes/rt11.txt");
@@ -36,6 +36,7 @@ public class Console {
 			System.out.println("Rt11");
 			System.out.println("Bus: " + (bus.totalTravelled()*0.000621371d)/bus.gasUsage());
 			System.out.println("Hybrid: " + (hybrid.totalTravelled()*0.000621371d)/hybrid.gasUsage());
+			System.out.println("Saved:  " + (bus.gasUsage() - hybrid.gasUsage()) / ITERATIONS);
 			System.out.println();
 			
 			
@@ -49,6 +50,7 @@ public class Console {
 			System.out.println("Rt10");
 			System.out.println("Bus: " + (bus.totalTravelled()*0.000621371d)/bus.gasUsage());
 			System.out.println("Hybrid: " + (hybrid.totalTravelled()*0.000621371d)/hybrid.gasUsage());
+			System.out.println("Saved:  " + (bus.gasUsage() - hybrid.gasUsage()) / ITERATIONS);
 			System.out.println();
 			
 			
@@ -62,6 +64,7 @@ public class Console {
 			System.out.println("Rt15");
 			System.out.println("Bus: " + (bus.totalTravelled()*0.000621371d)/bus.gasUsage());
 			System.out.println("Hybrid: " + (hybrid.totalTravelled()*0.000621371d)/hybrid.gasUsage());
+			System.out.println("Saved:  " + (bus.gasUsage() - hybrid.gasUsage()) / ITERATIONS);
 			System.out.println();
 			
 			
@@ -75,6 +78,7 @@ public class Console {
 			System.out.println("Rt81");
 			System.out.println("Bus: " + (bus.totalTravelled()*0.000621371d)/bus.gasUsage());
 			System.out.println("Hybrid: " + (hybrid.totalTravelled()*0.000621371d)/hybrid.gasUsage());
+			System.out.println("Saved:  " + (bus.gasUsage() - hybrid.gasUsage()) / ITERATIONS);
 			System.out.println();
 			
 			
@@ -88,6 +92,21 @@ public class Console {
 			System.out.println("Rt82");
 			System.out.println("Bus: " + (bus.totalTravelled()*0.000621371d)/bus.gasUsage());
 			System.out.println("Hybrid: " + (hybrid.totalTravelled()*0.000621371d)/hybrid.gasUsage());
+			System.out.println("Saved:  " + (bus.gasUsage() - hybrid.gasUsage()) / ITERATIONS);
+			System.out.println();
+			
+			
+			route = RouteFactory.loadRoute("routes/rt17.txt");
+			hybrid = new HybridBus();
+			bus = new Bus();
+			for(int i = 0; i < ITERATIONS; i++) {
+				route.drive(bus);
+				route.drive(hybrid);
+			}
+			System.out.println("Rt17");
+			System.out.println("Bus: " + (bus.totalTravelled()*0.000621371d)/bus.gasUsage());
+			System.out.println("Hybrid: " + (hybrid.totalTravelled()*0.000621371d)/hybrid.gasUsage());
+			System.out.println("Saved:  " + (bus.gasUsage() - hybrid.gasUsage()) / ITERATIONS);
 			System.out.println();
 			
 			

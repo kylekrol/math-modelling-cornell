@@ -64,16 +64,6 @@ public class Bus {
 			double dk = 0.5d * Constants.BUS_MASS * (vend*vend - v*v);
 			double du = Constants.BUS_MASS * 9.81d * dy;
 			double dw = workRes(a, v, dx);
-			
-			if(Double.isNaN(du + dk + dw)) {
-				try {
-					throw new Exception();
-				} catch(Exception excep) {
-					excep.printStackTrace();
-					System.exit(-1);
-				}
-			}
-			
 			run(dk + du + dw, sin);
 			v = vend;
 		} else {
@@ -104,8 +94,8 @@ public class Bus {
 				// Speed limit cannot be attained
 				double dk, du, dw;
 				double vmax = Math.sqrt( (2*a1*a2*dx + a2*v*v - a1*vf*vf) / (a2 - a1) );
-				dx1 = (vmax*vmax - v*v) / 2*a1;
-				dx2 = (vf*vf - vmax*vmax) / 2*a2;
+				dx1 = (vmax*vmax - v*v) / (2*a1);
+				dx2 = (vf*vf - vmax*vmax) / (2*a2);
 				// Acceleration segment one
 				dk = 0.5d * Constants.BUS_MASS * (vmax*vmax - v*v);
 				du = Constants.BUS_MASS * 9.81d * dx1 * sin;
