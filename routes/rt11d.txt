@@ -1,91 +1,143 @@
 // Route 11 daytime elements
 rd 30 180 0
-sl 0.5 false @seneca_cayuga
+sl 2 false @seneca_cayuga
 rd 30 140 0
-sl 0.5 false @seneca_geneva
+sl 2 false @seneca_geneva
 rd 30 83 0
-sl 0.5 true @seneca_albany
+sl 2 true @seneca_albany
 rd 30 48 0
-bs 0.5 @salv army
+bs 2 @salv army
 rd 30 47
-sl 0.5 false @albany_state
+sl 2 false @albany_state
 rd 2300 100
-ss 0.5 @albany_green
+ss 2 @albany_green
 rd 30 80 0
-sl 0.5 false @green_geneva
+sl 2 false @green_geneva
 rd 30 140 0
-sl 0.5 false @green_cayuga
+sl 2 false @green_cayuga
 rd 30 110 0
-bs 0.5 @commons
+bs 2 @commons
 rd 30 350 0
-sl 0.5 true @green_state
+sl 2 true @green_state
 rd 30 91 0
-sl 0.5 true @state_aurora // End double
+sl 2 true @state_aurora // End double
 bs 0.5 @commons
 rd 30 160 0
-cw 0.5 @aurora_hudson // For double change to ss
+cw 2 @aurora_hudson // For double change to ss
 rd 30 400 38
-bs 0.5 @husdon_columbia
-ss 0.5 @hudson_columbia
+bs 1 @husdon_columbia
+ss 1 @hudson_columbia
 rd 30 110 11
-cw 0.5
+cw 1
 rd 15 130 0
-bs 0.5 @S hill elementary
-cw 0.5
+bs 2 @S hill elementary
+cw 2
 rd 15 120 23
 rd 30 180 0
-bs 0.5 @hudson_grandview
-ss 0.5 @hudson_grandview
+bs 1 @hudson_grandview
+ss 1 @hudson_grandview
 rd 30 250 0
-bs 0.5 @hudson_cottington
-cw 0.5 @hudson_cottington
+bs 1 @hudson_cottington
+cw 1 @hudson_cottington
 rd 30 300 0
-bs 0.5 @hudson_bikepath // For double insert ss
+bs 2 @hudson_bikepath // For double insert ss
 rd 25 100 0
-ss 0.5 @grant_coddington
+ss 2 @grant_coddington
 rd 25 200 0
-cw 0.5 @parklotz
+cw 2 @parklotz
 rd 25 120 0
-cw 0.5 @ic
-ss 0.5 @grant_gym
-bs 0.5 @icaparts
+cw 3 @ic
+ss 3 @grant_gym
+bs 3 @icaparts
 rd 10 190 0
-cw 0.5 @ic
+cw 3 @ic
 rd 10 60 0
-cw 0.5
-bs 0.5 @icparkings
-cw 0.5
-cs 0.5
+cw 3
+bs 3 @icparkings
+cw 3
+cs 3
 rd 10 55 0
-ss 0.5 @lotz_textor
+ss 3 @lotz_textor
 rd 25 86 0
-ss 0.5 @textor_grant
+ss 3 @textor_grant
 rd 25 110 0
-bs 0.5 @mullerChapel
+bs 3 @mullerChapel
 rd 25 180 0
-cw 0.5 @roundabout
+cw 3 @roundabout
 rd 25 120 0
-cw 0.5
+cw 3
 rd 20 120 0
-ss 0.5 @conservatory_gym
-bs 0.5 @conservatory_gym
+ss 2 @conservatory_gym
+bs 2 @conservatory_gym
 rd 25 140 0
-cw 0.5 @conservatory_towerskyline
+cw 2 @conservatory_towerskyline
 rd 25 650 0
-bs 0.5 @towers
+bs 2 @towers
 rd 25 350 0
-cw 0.5 @Hillel
+cw 2 @Hillel
 rd 25 180 0
-cw 0.5 @baseballField // start double
+cw 2 @baseballField // start double
 rd 25 800 0
-bs 0.5 @collegeCirc // Farthest point
-//
+bs 2 @collegeCirc // Farthest point
 rd 25 1000 0
-//
-// Insert double here
-//
+cw 2 @baseballField // double
+rd 25 180 0
+cw 2 @Hillel
+rd 25 350 0
+bs 2 @towers
+rd 25 650 0
+cw 2 @conservatory_towerskyline
+rd 25 140 0
+bs 2 @conservatory_gym
+ss 2 @conservatory_gym
+rd 20 120 0
+cw 3
+rd 25 120 0
+cw 3 @roundabout
+rd 25 180 0
+bs 3 @mullerChapel
+rd 25 110 0
+ss 3 @textor_grant
+rd 25 86 0
+ss 3 @lotz_textor
+rd 10 55 0
+cw 3
+cw 3
+bs 3 @icparkings
+cw 3
+rd 10 60 0
+cw 3 @ic
+rd 10 190 0
+bs 3 @icaparts
+ss 3 @grant_gym
+cw 3 @ic
+rd 25 120 0
+cw 2 @parklotz
+rd 25 200 0
+ss 2 @grant_coddington
+rd 25 100 0
+bs 2 @hudson_bikepath
+ss 2 @hudson_grant
+rd 30 300 0
+cw 1 @hudson_cottington
+bs 1 @hudson_cottington
+rd 30 250 0
+ss 1 @hudson_grandview
+bs 1 @hudson_grandview
+rd 30 180 0
+rd 15 120 23
+cw 2
+bs 2 @S hill elementary
+rd 15 130 0
+cw 1
+rd 30 110 11
+ss 1 @hudson_columbia
+bs 1 @husdon_columbia
+rd 30 400 38
+ss 2 @aurora_hudson
+rd 30 160 0
+bs 0.5 @commons
+sl 2 true @state_aurora
 rd 20 100 0
-sl 0.5 true @Aurora_senecs
+sl 2 true @Aurora_senecs
 rd 20 71 0
-// Starting point
-//
