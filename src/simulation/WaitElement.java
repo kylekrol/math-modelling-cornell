@@ -18,4 +18,6 @@ public abstract class WaitElement implements Element {
 	protected WaitElement(double wait) {
 		this.wait = wait;
 	}
+	
+	protected abstract boolean hasWait();
 }

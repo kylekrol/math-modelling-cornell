@@ -23,7 +23,7 @@ public class Bus {
 	/** Updates gas usage given an amount of energy e consumed in joules */
 	private void runEngine(double e) {
 		if(e >= 0)
-			gasUsage += Constants.GAS_PER_JOULE * e / Constants.BUSS_EFF;
+			gasUsage += Constants.GAS_PER_JOULE * e / Constants.BUS_EFF;
 		else
 			System.err.println("Negative energy request revieved");
 	}
@@ -43,9 +43,9 @@ public class Bus {
 	 */
 	public void travel(double vf, double x, double dy) {
 		double k = 0.5d * Constants.BUS_MASS * (vf*vf - v*v);
-		double u = Constants.BUS_MASS * 9.81d * dy;
-		double w = Constants.BUS_MASS * x * (Constants.ROLL_FRIC + Constants.DRAG_CONST * vf*vf);
-		runEngine(k + u - w);
+		// double u = Constants.BUS_MASS * 9.81d * dy;
+		// double w = Constants.BUS_MASS * x * (Constants.ROLL_FRIC + Constants.DRAG_CONST * vf*vf);
+		runEngine(k /*+ u + w*/);
 	}
 
 	public void brake(double vf) {
@@ -53,6 +53,6 @@ public class Bus {
 	}
 
 	public void idle(double dt) {
-		// TODO
+		gasUsage += Constants.IDLE_GAL_PER_S * dt;
 	}
 }

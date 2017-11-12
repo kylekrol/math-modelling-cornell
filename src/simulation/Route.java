@@ -1,7 +1,5 @@
 package simulation;
 
-import java.util.List;
-
 import simulation.buses.Bus;
 
 /**
@@ -9,13 +7,25 @@ import simulation.buses.Bus;
  * elements.
  */
 public class Route {
-
-	/** List of route elements */
-	private List<Element> elements;
+	
+	/** Start of the route element linked list */
+	private Node start;
+	/** Tail of the route element linked list */
+	private Node tail;
 	
 	/** Creates a new route out of the given elements */
-	public Route(List<Element> elements) {
-		this.elements = elements;
+	public Route() {
+		
+	}
+	
+	/** Adds the passed route element to this route */
+	public void add(Element element) {
+		if(start == null) {
+			start = new Node(element);
+			tail = start;
+		}
+		tail.next = new Node(element);
+		tail = tail.next;
 	}
 	
 	/**
@@ -38,7 +48,24 @@ public class Route {
 	 * 		the bus driving through the route
 	 */
 	public void drive(Bus bus) {
-		for(Element element:elements)
-			element.drive(bus);
+		Node node = start;
+		while(node != null) {
+			node.element.drive(bus);
+			node = node.next;
+		}
+	}
+	
+	/** Represents a route element in the route's linked list */
+	private class Node {
+		
+		/** Route element at this node */
+		private Element element;
+		/** Pointer to the next element's node */
+		private Node next;
+		
+		/** Constructs a new route element node */
+		private Node(Element element) {
+			this.element = element;
+		}
 	}
 }

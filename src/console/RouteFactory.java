@@ -4,10 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.LinkedList;
-import java.util.List;
 
-import simulation.Element;
 import simulation.Route;
 import simulation.elements.BusStop;
 import simulation.elements.Crosswalk;
@@ -30,31 +27,32 @@ public class RouteFactory {
 	 * @throws IOException
 	 */
 	public static Route loadRoute(String file) throws FileNotFoundException, IOException {
+		Route route = new Route();
 		BufferedReader reader = null;
-		List<Element> elements = new LinkedList<Element>();
 		try {
 			int i = 0;
 			String line;
 			reader = new BufferedReader(new FileReader(file));
-			while((line = reader.readLine().toLowerCase()) != null) {
+			while((line = reader.readLine()) != null) {
+				line = line.toLowerCase();
 				i++;
 				if(line.startsWith("rd"))
-					elements.add(loadRoad(line.split(" "), i));
+					route.add(loadRoad(line.split(" "), i));
 				else if(line.startsWith("bs"))
-					elements.add(loadBusStop(line.split(" "), i));
+					route.add(loadBusStop(line.split(" "), i));
 				else if(line.startsWith("ss"))
-					elements.add(loadStopSign(line.split(" "), i));
+					route.add(loadStopSign(line.split(" "), i));
 				else if(line.startsWith("sl"))
-					elements.add(loadStopLight(line.split(" "), i));
-				else if(line.startsWith("cs"))
-					elements.add(loadCrosswalk(line.split(" "), i));
+					route.add(loadStopLight(line.split(" "), i));
+				else if(line.startsWith("cw"))
+					route.add(loadCrosswalk(line.split(" "), i));
 				else if(!line.startsWith("//"))
 					System.err.println("Unexpected route element type on line " + i);
 			}
 		} finally {
 			if(reader != null) reader.close();
 		}
-		return new Route(elements);
+		return route;
 	}
 	
 	/**
@@ -107,8 +105,15 @@ public class RouteFactory {
 	
 	/** Loads a crosswalk wait time for the given congestion level */
 	private static double busStopWait(int congestion) {
-		// TODO
-		return congestion;
+		if(congestion == 1)
+			return 30.0d;
+		else if(congestion == 2)
+			return 45.0d;
+		else if(congestion == 3)
+			return 90.0d;
+		System.err.println("Invalid congestion argument");
+		System.exit(-1);
+		return 0.0d;
 	}
 	
 	/**
@@ -136,8 +141,15 @@ public class RouteFactory {
 	
 	/** Loads a stop sign wait time for the given congestion level */
 	private static double stopSignWait(int congestion) {
-		// TODO
-		return congestion;
+		if(congestion == 1)
+			return 5.0d;
+		else if(congestion == 2)
+			return 20.0d;
+		else if(congestion == 3)
+			return 60.0d;
+		System.err.println("Invalid congestion argument");
+		System.exit(-1);
+		return 0.0d;
 	}
 	
 	/**
@@ -167,8 +179,15 @@ public class RouteFactory {
 	
 	/** Loads a stop light wait time for the given congestion level */
 	private static double stopLightWait(int congestion) {
-		// TODO
-		return congestion;
+		if(congestion == 1)
+			return 30.0d;
+		else if(congestion == 2)
+			return 60.0d;
+		else if(congestion == 3)
+			return 150.0d;
+		System.err.println("Invalid congestion argument");
+		System.exit(-1);
+		return 0.0d;
 	}
 	
 	/**
@@ -196,13 +215,27 @@ public class RouteFactory {
 	
 	/** Loads a crosswalk wait time for the given congestion level */
 	private static double crosswalkWait(int congestion) {
-		// TODO
-		return congestion;
+		if(congestion == 1)
+			return 5.0d;
+		else if(congestion == 2)
+			return 10.0d;
+		else if(congestion == 3)
+			return 30.0d;
+		System.err.println("Invalid congestion argument");
+		System.exit(-1);
+		return 0.0d;
 	}
 	
 	/** Loads a crosswalk stop chance for the given congestion level */
 	private static double crosswalkStop(int congestion) {
-		// TODO
-		return congestion;
+		if(congestion == 1)
+			return 0.05d;
+		else if(congestion == 2)
+			return 0.20d;
+		else if(congestion == 3)
+			return 0.60d;
+		System.err.println("Invalid congestion argument");
+		System.exit(-1);
+		return 0.0d;
 	}
 }
