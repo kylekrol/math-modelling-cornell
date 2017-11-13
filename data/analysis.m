@@ -1,11 +1,11 @@
 close all;
 
-calcmpgstats('rt10mpg.txt')
-calcmpgstats('rt11mpg.txt')
-calcmpgstats('rt15mpg.txt')
-calcmpgstats('rt17mpg.txt')
-calcmpgstats('rt81mpg.txt')
-calcmpgstats('rt82mpg.txt')
+calcmpgstats('mpg/rt10mpg.txt')
+calcmpgstats('mpg/rt11mpg.txt')
+calcmpgstats('mpg/rt15mpg.txt')
+calcmpgstats('mpg/rt17mpg.txt')
+calcmpgstats('mpg/rt81mpg.txt')
+calcmpgstats('mpg/rt82mpg.txt')
 
 function calcmpgstats(file)
 
