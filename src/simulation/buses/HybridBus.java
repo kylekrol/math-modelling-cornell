@@ -16,6 +16,7 @@ public class HybridBus extends Bus {
 		return batCharge;
 	}
 	
+	/** Creates a new hybrid bus and initializes its energy value to zero */
 	public HybridBus() {
 		super();
 		batCharge = 0.0d;

@@ -2,6 +2,10 @@ package simulation.buses;
 
 import console.Constants;
 
+/**
+ * Represents a bus that can be run through a route's elements. Performs all
+ * necessary kinematics and energy to fuel calculations here. 
+ */
 public class Bus {
 
 	/** Gas used in gallons */
@@ -126,13 +130,14 @@ public class Bus {
 	}
 
 	/**
-	 * Decreases the speed of the bus to vf i necessary. If v is already below
+	 * Decreases the speed of the bus to vf if necessary. If v is already below
 	 * vf no action is taken
 	 */
 	public void brake(double vf) {
 		v = (v < vf ? v : vf);
 	}
 
+	/** Has the bus idle for the specified time interval */
 	public void idle(double dt) {
 		gasUsage += Constants.IDLE_GAL_PER_S * dt;
 	}

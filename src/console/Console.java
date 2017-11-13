@@ -25,7 +25,10 @@ public class Console {
 
 	}
 	
-	
+	/**
+	 * Writes gas mileage data over a root to a text file. 1000 trials are
+	 * recorded.
+	 */
 	private static void getAllMPGData() {
 		try {
 			
@@ -41,6 +44,7 @@ public class Console {
 		}
 	}
 	
+	/** Writes gas mileage data for a single route to the specified data file */
 	private static void getMPGData(String data, String source) throws IOException {
 		BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(data));
 		Route route = RouteFactory.loadRoute(source);
@@ -57,28 +61,31 @@ public class Console {
 		route.drive(hybrid, 1000, out, new DataPrinter() {
 			@Override public String line() {
 				double gm = hybrid.gasMileage();
-				if(Double.isNaN(gm)) System.err.println("NaN gas");
 				hybrid.reset();
 				return gm + ",";
 			}
 		});
 	}
 	
+	/**
+	 * Print out average gas mileage over each route for both buses over 1000
+	 * iterations. The gallons of gas saved per route by driving the hybrid is
+	 * also displayed
+	 */
 	private static void getAllMPG() {
 		try {
-			
 			getMPG("rt10");
 			getMPG("rt11");
 			getMPG("rt15");
 			getMPG("rt17");
 			getMPG("rt81");
 			getMPG("rt82");
-			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 	
+	/** Prints out data for average MPG and saved gallons of gas per loop */
 	private static void getMPG(String file) throws IOException {
 		Route route = RouteFactory.loadRoute("routes/" + file + ".txt");
 		HybridBus hybrid = new HybridBus();
