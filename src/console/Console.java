@@ -1,7 +1,6 @@
 package console;
 
 import java.io.BufferedOutputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -15,17 +14,15 @@ public class Console {
 	/** Program starts from here */
 	public static void main(String[] args) {
 		
-		
-		
-		//getAllMPG();
+		getAllMPG();
 		
 		System.out.println();
 		System.out.println("----------");
 		System.out.println();
 		
-		//getAllMPGData();
+		getAllMPGData();
 		
-		//getAllGasTotals();
+		getAllGasTotals();
 		
 		getRouteGasIncrements();
 		
