@@ -1,7 +1,6 @@
 package console;
 
 import java.io.BufferedOutputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -66,136 +65,32 @@ public class Console {
 	}
 	
 	private static void getAllMPG() {
-		
-		final int ITERATIONS = 10000;
-		
 		try {
-			Route route = RouteFactory.loadRoute("routes/rt11.txt");
-			HybridBus hybrid = new HybridBus();
-			Bus bus = new Bus();
-			for(int i = 0; i < ITERATIONS; i++) {
-				route.drive(bus);
-				route.drive(hybrid);
-			}
-			System.out.println("Rt11");
-			System.out.println("Bus: " + (bus.totalTravelled()*0.000621371d)/bus.gasUsage());
-			System.out.println("Hybrid: " + (hybrid.totalTravelled()*0.000621371d)/hybrid.gasUsage());
-			System.out.println("Saved:  " + (bus.gasUsage() - hybrid.gasUsage()) / ITERATIONS);
-			System.out.println();
 			
+			getMPG("rt10");
+			getMPG("rt11");
+			getMPG("rt15");
+			getMPG("rt17");
+			getMPG("rt81");
+			getMPG("rt82");
 			
-			route = RouteFactory.loadRoute("routes/rt10.txt");
-			hybrid = new HybridBus();
-			bus = new Bus();
-			for(int i = 0; i < ITERATIONS; i++) {
-				route.drive(bus);
-				route.drive(hybrid);
-			}
-			System.out.println("Rt10");
-			System.out.println("Bus: " + (bus.totalTravelled()*0.000621371d)/bus.gasUsage());
-			System.out.println("Hybrid: " + (hybrid.totalTravelled()*0.000621371d)/hybrid.gasUsage());
-			System.out.println("Saved:  " + (bus.gasUsage() - hybrid.gasUsage()) / ITERATIONS);
-			System.out.println();
-			
-			
-			route = RouteFactory.loadRoute("routes/rt15.txt");
-			hybrid = new HybridBus();
-			bus = new Bus();
-			for(int i = 0; i < ITERATIONS; i++) {
-				route.drive(bus);
-				route.drive(hybrid);
-			}
-			System.out.println("Rt15");
-			System.out.println("Bus: " + (bus.totalTravelled()*0.000621371d)/bus.gasUsage());
-			System.out.println("Hybrid: " + (hybrid.totalTravelled()*0.000621371d)/hybrid.gasUsage());
-			System.out.println("Saved:  " + (bus.gasUsage() - hybrid.gasUsage()) / ITERATIONS);
-			System.out.println();
-			
-			
-			route = RouteFactory.loadRoute("routes/rt81.txt");
-			hybrid = new HybridBus();
-			bus = new Bus();
-			for(int i = 0; i < ITERATIONS; i++) {
-				route.drive(bus);
-				route.drive(hybrid);
-			}
-			System.out.println("Rt81");
-			System.out.println("Bus: " + (bus.totalTravelled()*0.000621371d)/bus.gasUsage());
-			System.out.println("Hybrid: " + (hybrid.totalTravelled()*0.000621371d)/hybrid.gasUsage());
-			System.out.println("Saved:  " + (bus.gasUsage() - hybrid.gasUsage()) / ITERATIONS);
-			System.out.println();
-			
-			
-			route = RouteFactory.loadRoute("routes/rt82.txt");
-			hybrid = new HybridBus();
-			bus = new Bus();
-			for(int i = 0; i < ITERATIONS; i++) {
-				route.drive(bus);
-				route.drive(hybrid);
-			}
-			System.out.println("Rt82");
-			System.out.println("Bus: " + (bus.totalTravelled()*0.000621371d)/bus.gasUsage());
-			System.out.println("Hybrid: " + (hybrid.totalTravelled()*0.000621371d)/hybrid.gasUsage());
-			System.out.println("Saved:  " + (bus.gasUsage() - hybrid.gasUsage()) / ITERATIONS);
-			System.out.println();
-			
-			
-			route = RouteFactory.loadRoute("routes/rt17.txt");
-			hybrid = new HybridBus();
-			bus = new Bus();
-			for(int i = 0; i < ITERATIONS; i++) {
-				route.drive(bus);
-				route.drive(hybrid);
-			}
-			System.out.println("Rt17");
-			System.out.println("Bus: " + (bus.totalTravelled()*0.000621371d)/bus.gasUsage());
-			System.out.println("Hybrid: " + (hybrid.totalTravelled()*0.000621371d)/hybrid.gasUsage());
-			System.out.println("Saved:  " + (bus.gasUsage() - hybrid.gasUsage()) / ITERATIONS);
-			System.out.println();
-			
-			
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 	
-	/*
-Rt11
-Bus: 6.798771825662416
-Hybrid: 10.643130866792973
-Saved:  0.40083467339221224
-
-Rt10
-Bus: 5.403425578888811
-Hybrid: 8.980662712184332
-Saved:  0.22573133481224728
-
-Rt15
-Bus: 5.665604154253449
-Hybrid: 10.533093675730612
-Saved:  0.3687116236003167
-
-Rt81
-Bus: 7.240899587478843
-Hybrid: 13.59985246758139
-Saved:  0.25796054805579754
-
-Rt82
-Bus: 7.468545561172195
-Hybrid: 12.834424425014292
-Saved:  0.5332038015105971
-
-Rt17
-Bus: 7.984665352908379
-Hybrid: 12.751478148924123
-Saved:  0.14554333753588175
-
-
-----------
-
-Complete
-
-	 */
+	private static void getMPG(String file) throws IOException {
+		Route route = RouteFactory.loadRoute("routes/" + file + ".txt");
+		HybridBus hybrid = new HybridBus();
+		Bus bus = new Bus();
+		for(int i = 0; i < 1000; i++) {
+			route.drive(bus);
+			route.drive(hybrid);
+		}
+		System.out.println(file);
+		System.out.println("Bus:    " + (bus.totalTravelled()*0.000621371d)/bus.gasUsage());
+		System.out.println("Hybrid: " + (hybrid.totalTravelled()*0.000621371d)/hybrid.gasUsage());
+		System.out.println("Saved:  " + (bus.gasUsage() - hybrid.gasUsage()) / 1000.0d);
+		System.out.println();
+	}
 }
