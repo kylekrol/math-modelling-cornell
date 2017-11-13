@@ -22,8 +22,47 @@ public class Console {
 		
 		getAllMPGData();
 		
+		getAllGasTotals();
+		
 		System.out.println("Complete");
 
+	}
+	
+	private static void getAllGasTotals() {
+		try {
+			
+			getGasData("data/gas/rt10gas.txt","routes/rt10.txt");
+			getGasData("data/gas/rt11gas.txt","routes/rt11.txt");
+			getGasData("data/gas/rt15gas.txt","routes/rt15.txt");
+			getGasData("data/gas/rt17gas.txt","routes/rt17.txt");
+			getGasData("data/gas/rt81gas.txt","routes/rt81.txt");
+			getGasData("data/gas/rt82gas.txt","routes/rt82.txt");
+			
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	private static void getGasData(String data, String source) throws IOException {
+		BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(data));
+		try {
+			Route route = RouteFactory.loadRoute(source);
+			HybridBus hybrid = new HybridBus();
+			Bus bus = new Bus();
+			for(int i = 0; i < 999; i++) {
+				route.drive(bus);
+				route.drive(hybrid);
+				out.write((bus.gasUsage() + "," + hybrid.gasUsage() + System.lineSeparator()).getBytes());
+				bus.reset();
+				hybrid.reset();
+			}
+			route.drive(bus);
+			route.drive(hybrid);
+			out.write((bus.gasMileage() + "," + hybrid.gasMileage()).getBytes());
+		} finally {
+			out.close();
+		}
 	}
 	
 	/**
@@ -33,12 +72,12 @@ public class Console {
 	private static void getAllMPGData() {
 		try {
 			
-			getMPGData("data/rt10mpg.txt","routes/rt10.txt");
-			getMPGData("data/rt11mpg.txt","routes/rt11.txt");
-			getMPGData("data/rt15mpg.txt","routes/rt15.txt");
-			getMPGData("data/rt17mpg.txt","routes/rt17.txt");
-			getMPGData("data/rt81mpg.txt","routes/rt81.txt");
-			getMPGData("data/rt82mpg.txt","routes/rt82.txt");
+			getMPGData("data/mpg/rt10mpg.txt","routes/rt10.txt");
+			getMPGData("data/mpg/rt11mpg.txt","routes/rt11.txt");
+			getMPGData("data/mpg/rt15mpg.txt","routes/rt15.txt");
+			getMPGData("data/mpg/rt17mpg.txt","routes/rt17.txt");
+			getMPGData("data/mpg/rt81mpg.txt","routes/rt81.txt");
+			getMPGData("data/mpg/rt82mpg.txt","routes/rt82.txt");
 			
 		} catch(IOException e) {
 			e.printStackTrace();
