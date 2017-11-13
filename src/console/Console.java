@@ -5,7 +5,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 import simulation.Route;
-import simulation.Route.DataPrinter;
 import simulation.buses.Bus;
 import simulation.buses.HybridBus;
 
@@ -49,24 +48,23 @@ public class Console {
 	/** Writes gas mileage data for a single route to the specified data file */
 	private static void getMPGData(String data, String source) throws IOException {
 		BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(data));
-		Route route = RouteFactory.loadRoute(source);
-		HybridBus hybrid = new HybridBus();
-		Bus bus = new Bus();
-		route.drive(bus, 1000, out, new DataPrinter() {
-			@Override public String line() {
-				double gm = bus.gasMileage();
+		try {
+			Route route = RouteFactory.loadRoute(source);
+			HybridBus hybrid = new HybridBus();
+			Bus bus = new Bus();
+			for(int i = 0; i < 999; i++) {
+				route.drive(bus);
+				route.drive(hybrid);
+				out.write((bus.gasMileage() + "," + hybrid.gasMileage() + System.lineSeparator()).getBytes());
 				bus.reset();
-				return gm + ",";
-			}
-		});
-		out.write(System.lineSeparator().getBytes());
-		route.drive(hybrid, 1000, out, new DataPrinter() {
-			@Override public String line() {
-				double gm = hybrid.gasMileage();
 				hybrid.reset();
-				return gm + ",";
 			}
-		});
+			route.drive(bus);
+			route.drive(hybrid);
+			out.write((bus.gasMileage() + "," + hybrid.gasMileage()).getBytes());
+		} finally {
+			out.close();
+		}
 	}
 	
 	/**

@@ -13,11 +13,6 @@ import simulation.elements.WaitElement;
  */
 public class Route {
 	
-	/** Interface allowing choice data printing from the Console class */
-	public interface DataPrinter {
-		public String line();
-	}
-	
 	/** Start of the route element linked list */
 	private Node start;
 	/** Tail of the route element linked list */
@@ -37,18 +32,6 @@ public class Route {
 		}
 		tail.next = new Node(element);
 		tail = tail.next;
-	}
-	
-	/**
-	 * Drives a bus through the route a specified number of times and writes
-	 * the data to the output stream via the provided data printer method
-	 * @throws IOException 
-	 */
-	public void drive(Bus bus, int n, OutputStream print, DataPrinter data) throws IOException {
-		for(int i = 0; i < n; i++) {
-			drive(bus);
-			print.write(data.line().getBytes());
-		}
 	}
 	
 	/**

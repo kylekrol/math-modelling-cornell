@@ -1,0 +1,13 @@
+clear all;
+close all;
+
+
+
+function plotloopmpg(file, i)
+
+    figure(i)
+    data = csvread(file, 1000, 2);
+    plot(data(1,:),'b-')
+    plot(data(2,:),'g-')
+
+end

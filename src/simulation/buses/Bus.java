@@ -28,10 +28,10 @@ public class Bus {
 		this.totalTraval = 0.0d;
 	}
 	
-	/** Returns the gas mileage of the bus */
+	/** Returns the gas mileage of the bus in miles per gallon */
 	public double gasMileage() {
-		return totalTraval / gasUsage;
-	}
+		return totalTraval * 0.000621371d  / gasUsage;
+	} // Constant converts meters to miles
 
 	/** Returns the bus's current gas usage in gallons */
 	public double gasUsage() {
