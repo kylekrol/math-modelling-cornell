@@ -28,9 +28,11 @@ public class Route {
 	public void add(Object element) {
 		if(start == null) {
 			start = new Node(element);
+			start.index = 1;
 			tail = start;
 		}
 		tail.next = new Node(element);
+		tail.next.index = tail.index + 1;
 		tail = tail.next;
 	}
 	
@@ -51,6 +53,32 @@ public class Route {
 				node = processOnSoftTurn(bus, node);
 			}
 		}
+	}
+	
+	/**
+	 * Runs the bus through the route a single time while printing out gas
+	 * usage over the route.
+	 * 
+	 * @param bus
+	 * 		the bus driving through the route
+	 * @param out
+	 * 		the output stream being written to
+	 * @throws IOException
+	 */
+	public void driveGasUsage(Bus bus, OutputStream out) throws IOException {
+		Node node = processOnStop(bus, start);
+		while(node != null) {
+			out.write((bus.gasUsage() + "," + node.index + System.lineSeparator()).getBytes());
+			bus.resetFuel(); // Set gas to zero to get per step gas values
+			if(node.element instanceof Road) {
+				node = processOnRoad(bus, node);
+			} else if(bus.speed() == 0.0d) {
+					node = processOnStop(bus, node); 
+			} else {
+				node = processOnSoftTurn(bus, node);
+			}
+		}
+		out.write((bus.gasUsage() + System.lineSeparator()).getBytes());
 	}
 	
 	/**
@@ -151,6 +179,8 @@ public class Route {
 		private Object element;
 		/** Pointer to the next element's node */
 		private Node next;
+		/** This element's index in the route */
+		private int index;
 		
 		/** Constructs a new route element node */
 		private Node(Object element) {

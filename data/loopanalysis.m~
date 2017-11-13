@@ -1,0 +1,26 @@
+close all;
+
+% graph gas usage over a single route
+
+figure('Name','Gas Usage Over The Course of Each Route')
+
+
+graphsteps('stp/rt10.txt','Route 10',1)
+graphsteps('stp/rt11.txt','Route 11',2)
+graphsteps('stp/rt15.txt','Route 15',3)
+graphsteps('stp/rt17.txt','Route 17',4)
+graphsteps('stp/rt81.txt','Route 81',5)
+graphsteps('stp/rt82.txt','Route 82',6)
+
+function graphsteps(file, title, i)
+    
+    subplot(2,3,i)
+    data = csvread(file);
+    bar(data(:,1))
+    
+    title(title)
+    xlabel('Route Progression')
+    ylable('Gas Consumed (gal)')
+   
+    
+end

@@ -1,6 +1,7 @@
 package console;
 
 import java.io.BufferedOutputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -14,18 +15,73 @@ public class Console {
 	/** Program starts from here */
 	public static void main(String[] args) {
 		
-		getAllMPG();
+		
+		
+		//getAllMPG();
 		
 		System.out.println();
 		System.out.println("----------");
 		System.out.println();
 		
-		getAllMPGData();
+		//getAllMPGData();
 		
-		getAllGasTotals();
+		//getAllGasTotals();
+		
+		getRouteGasIncrements();
 		
 		System.out.println("Complete");
 
+	}
+	
+	private static void getRouteGasIncrements() {
+		BufferedOutputStream out = null;
+		try {
+			
+			Bus bus = new Bus();
+			out = new BufferedOutputStream(new FileOutputStream("data/stp/rt10.txt"));
+			Route route = RouteFactory.loadRoute("routes/rt10.txt");
+			route.driveGasUsage(bus, out);
+			out.close();
+			
+			bus = new Bus();
+			out = new BufferedOutputStream(new FileOutputStream("data/stp/rt11.txt"));
+			route = RouteFactory.loadRoute("routes/rt11.txt");
+			route.driveGasUsage(bus, out);
+			out.close();
+			
+			bus = new Bus();
+			out = new BufferedOutputStream(new FileOutputStream("data/stp/rt15.txt"));
+			route = RouteFactory.loadRoute("routes/rt15.txt");
+			route.driveGasUsage(bus, out);
+			out.close();
+			
+			bus = new Bus();
+			out = new BufferedOutputStream(new FileOutputStream("data/stp/rt17.txt"));
+			route = RouteFactory.loadRoute("routes/rt17.txt");
+			route.driveGasUsage(bus, out);
+			out.close();
+			
+			bus = new Bus();
+			out = new BufferedOutputStream(new FileOutputStream("data/stp/rt81.txt"));
+			route = RouteFactory.loadRoute("routes/rt81.txt");
+			route.driveGasUsage(bus, out);
+			out.close();
+			
+			bus = new Bus();
+			out = new BufferedOutputStream(new FileOutputStream("data/stp/rt82.txt"));
+			route = RouteFactory.loadRoute("routes/rt82.txt");
+			route.driveGasUsage(bus, out);
+			out.close();
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				out.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 	
 	/**

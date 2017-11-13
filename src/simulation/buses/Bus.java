@@ -28,6 +28,11 @@ public class Bus {
 		this.totalTraval = 0.0d;
 	}
 	
+	/** Resets the fuel counter to zero */
+	public void resetFuel() {
+		this.gasUsage = 0.0f;
+	}
+	
 	/** Returns the gas mileage of the bus in miles per gallon */
 	public double gasMileage() {
 		return totalTraval * 0.000621371d  / gasUsage;
