@@ -9,8 +9,10 @@ import simulation.Route.DataPrinter;
 import simulation.buses.Bus;
 import simulation.buses.HybridBus;
 
+/** Main class for the simulation */
 public class Console {
 
+	/** Program starts from here */
 	public static void main(String[] args) {
 		
 		getAllMPG();
