@@ -28,6 +28,10 @@ public class Console {
 
 	}
 	
+	/**
+	 * Writes gas usage data over a root to a text file. 1000 trials are
+	 * recorded.
+	 */
 	private static void getAllGasTotals() {
 		try {
 			
@@ -43,7 +47,7 @@ public class Console {
 		}
 	}
 	
-	
+	/** Writes gas usage data for a single route to the specified data file */
 	private static void getGasData(String data, String source) throws IOException {
 		BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(data));
 		try {
