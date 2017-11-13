@@ -1,12 +1,17 @@
 close all;
 
-plotloopmpg('rt10mpg.txt',1)
+calcmpgstats('rt10mpg.txt')
+calcmpgstats('rt11mpg.txt')
+calcmpgstats('rt15mpg.txt')
+calcmpgstats('rt17mpg.txt')
+calcmpgstats('rt81mpg.txt')
+calcmpgstats('rt82mpg.txt')
 
-function plotloopmpg(file, i)
+function calcmpgstats(file)
 
-    figure(i)
-    data = csvread(file, 2, 999);
-    plot(data(1,:),'b-')
-    plot(data(2,:),'g-')
-
+    data = csvread(file);
+    fprintf(['\n' file '\n'])
+    fprintf('Gas    - mean=%0.3f std=%0.3f\n',mean(data(:,1)),std(data(:,1)))
+    fprintf('Hybrid - mean=%0.3f std=%0.3f\n',mean(data(:,2)),std(data(:,2)))
+    
 end

@@ -1,13 +1,11 @@
-clear all;
 close all;
 
+calcmpgstats('rt10mpg.txt')
 
+function calcmpgstats(file)
 
-function plotloopmpg(file, i)
-
-    figure(i)
-    data = csvread(file, 1000, 2);
-    plot(data(1,:),'b-')
-    plot(data(2,:),'g-')
-
+    data = csvread(file);
+    print(file)
+    print('Gas    - mean=%.3f std=%0.3f',mean(data(:,1)),std(data(:,1)))
+    print('Hybrid - mean=%.3f std=%0.3f',mean(data(:,2)),std(data(:,2)))
 end
