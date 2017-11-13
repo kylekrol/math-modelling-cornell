@@ -23,6 +23,11 @@ public class Bus {
 		this.gasUsage = 0.0d;
 		this.totalTraval = 0.0d;
 	}
+	
+	/** Returns the gas mileage of the bus */
+	public double gasMileage() {
+		return totalTraval / gasUsage;
+	}
 
 	/** Returns the bus's current gas usage in gallons */
 	public double gasUsage() {

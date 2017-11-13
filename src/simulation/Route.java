@@ -48,7 +48,6 @@ public class Route {
 		for(int i = 0; i < n; i++) {
 			drive(bus);
 			print.write(data.line().getBytes());
-			print.write(System.lineSeparator().getBytes());
 		}
 	}
 	
